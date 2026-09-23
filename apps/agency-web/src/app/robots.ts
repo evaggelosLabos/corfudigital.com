@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://yourbrand.gr/sitemap.xml",
+    sitemap: "https://corfudigital.com/sitemap.xml",
   };
 }
