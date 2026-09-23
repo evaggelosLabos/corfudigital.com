@@ -1,7 +1,13 @@
-﻿import React from "react";
+import React from "react";
 import { Award, ShieldCheck, CheckCircle2, ArrowUpRight, Cpu, Globe, Layers } from "lucide-react";
 
-export const FounderTrustBadge = () => {
+export interface FounderTrustBadgeProps {
+  lang?: "en" | "el";
+}
+
+export const FounderTrustBadge: React.FC<FounderTrustBadgeProps> = ({ lang = "en" }) => {
+  const isEl = lang === "el";
+
   return (
     <section className="py-20 bg-stone-100/70 border-y border-stone-200/80">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -11,26 +17,36 @@ export const FounderTrustBadge = () => {
             <div className="lg:col-span-6 space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-sky-800 text-xs font-bold border border-sky-200/60">
                 <ShieldCheck className="w-4 h-4 text-sky-600" />
-                Studio DNA & European Heritage
+                {isEl ? "DNA & Ευρωπαϊκή Εμπειρία" : "Studio DNA & European Heritage"}
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight leading-tight">
-                European Startup Rigor for Corfu Hospitality
+                {isEl 
+                  ? "Ευρωπαϊκά Πρότυπα Τεχνολογίας για τον Τουρισμό της Κέρκυρας" 
+                  : "European Startup Rigor for Corfu Hospitality"}
               </h2>
 
               <p className="text-stone-600 text-sm sm:text-base leading-relaxed">
-                Founded by <strong>Evangelos Lampos</strong> — bridging European venture innovation (EIT Digital Venture alumni, BlueInvest) and MSc Computer Vision research with deep local Corfu hospitality operations.
+                {isEl ? (
+                  <>
+                    Ιδρυτής ο <strong>Ευάγγελος Λάμπος</strong> — συνδυάζοντας την εμπειρία ευρωπαϊκών venture προγραμμάτων (EIT Digital Venture alumni, BlueInvest) και έρευνας MSc Computer Vision με βαθιά γνώση της τουριστικής αγοράς της Κέρκυρας.
+                  </>
+                ) : (
+                  <>
+                    Founded by <strong>Evangelos Lampos</strong> — bridging European venture innovation (EIT Digital Venture alumni, BlueInvest) and MSc Computer Vision research with deep local Corfu hospitality operations.
+                  </>
+                )}
               </p>
 
               <div className="pt-2 flex items-center gap-6 text-xs text-stone-600 font-semibold">
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500" /> Based in Corfu
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" /> {isEl ? "Έδρα στην Κέρκυρα" : "Based in Corfu"}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500" /> Enterprise TypeScript
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" /> {isEl ? "Enterprise TypeScript" : "Enterprise TypeScript"}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-500" /> 0% OTA Commissions
+                  <CheckCircle2 className="w-4 h-4 text-emerald-500" /> {isEl ? "0% Προμήθειες OTA" : "0% OTA Commissions"}
                 </span>
               </div>
             </div>
@@ -52,11 +68,11 @@ export const FounderTrustBadge = () => {
                     EIT Digital <ArrowUpRight className="w-3 h-3 text-stone-400 group-hover:text-sky-600" />
                   </div>
                   <div className="text-[11px] text-stone-600 font-medium mt-1 leading-snug">
-                    Venture Program Alumni
+                    {isEl ? "Απόφοιτος Προγράμματος" : "Venture Program Alumni"}
                   </div>
                 </div>
                 <div className="text-[10px] font-bold text-sky-800 uppercase tracking-wider mt-4">
-                  Official Backing &rarr;
+                  {isEl ? "Επίσημη Στήριξη →" : "Official Backing →"}
                 </div>
               </a>
 
@@ -70,11 +86,11 @@ export const FounderTrustBadge = () => {
                     MSc AI & CV
                   </div>
                   <div className="text-[11px] text-stone-600 font-medium mt-1 leading-snug">
-                    Ionian University (YOLO Vision)
+                    {isEl ? "Ιόνιο Πανεπιστήμιο (YOLO)" : "Ionian University (YOLO)"}
                   </div>
                 </div>
                 <div className="text-[10px] font-bold text-purple-800 uppercase tracking-wider mt-4">
-                  Applied AI
+                  {isEl ? "Εφαρμοσμένο AI" : "Applied AI"}
                 </div>
               </div>
 
@@ -88,7 +104,7 @@ export const FounderTrustBadge = () => {
                     5+ Live Apps
                   </div>
                   <div className="text-[11px] text-stone-600 font-medium mt-1 leading-snug">
-                    Active Corfu Stays & Fleets
+                    {isEl ? "Ενεργά Έργα Κέρκυρας" : "Active Corfu Stays & Fleets"}
                   </div>
                 </div>
                 <div className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider mt-4">
