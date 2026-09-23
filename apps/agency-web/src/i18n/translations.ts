@@ -5,6 +5,7 @@ export interface TranslationDictionary {
     hotels: string;
     villas: string;
     boats: string;
+    digitalTransformation: string;
     caseStudies: string;
     aiDemo: string;
     tagline: string;
@@ -40,6 +41,8 @@ export interface TranslationDictionary {
     s3Desc: string;
     s4Title: string;
     s4Desc: string;
+    s5Title: string;
+    s5Desc: string;
     learnMore: string;
   };
   portfolio: {
@@ -86,6 +89,7 @@ export const translations: Record<Language, TranslationDictionary> = {
       hotels: "Hotels",
       villas: "Villas",
       boats: "Boats & Fleet",
+      digitalTransformation: "SME Digital Upgrade",
       caseStudies: "Case Studies",
       aiDemo: "AI Demo",
       tagline: "Studio & Tech Lab",
@@ -93,12 +97,12 @@ export const translations: Record<Language, TranslationDictionary> = {
       backHome: "Back to Studio Home",
     },
     hero: {
-      badge: "Corfu's Premier Hospitality & Tourism Digital Agency",
+      badge: "Corfu's Premier Digital Agency & Tech Lab",
       titleLine1: "We Build Fast Websites &",
-      titleHighlight: "Direct Booking Engines",
-      titleLine2: "That Eliminate OTA Commissions",
+      titleHighlight: "Digital Booking Engines",
+      titleLine2: "For Corfu Businesses & Hospitality",
       subtitle:
-        "Bespoke web engineering, 2-way iCal & Beds24 channel sync, visual AI technology, and 0% commission direct booking systems for Corfu boutique hotels, luxury villas, boat rentals, and transfers.",
+        "Bespoke web development, small business digital transformation, 2-way iCal & Beds24 channel sync, visual AI technology, and 0% commission direct booking systems for Corfu hotels, luxury villas, boat rentals, and local SMEs.",
       ctaPrimary: "Calculate Your OTA Savings",
       ctaSecondary: "Explore Live Client Work",
       metric1Val: "< 0.8s",
@@ -106,15 +110,15 @@ export const translations: Record<Language, TranslationDictionary> = {
       metric2Val: "0%",
       metric2Label: "OTA Commission Cut",
       metric3Val: "100%",
-      metric3Label: "Custom Code & iCal Sync",
+      metric3Label: "Custom Code & Automation",
       metric4Val: "24/7",
-      metric4Label: "AI Guest Concierge",
+      metric4Label: "AI Business Concierge",
     },
     services: {
       badge: "Engineering Capabilities",
-      heading: "Built Specifically for Corfu & Ionian Hospitality",
+      heading: "Purpose-Built for Corfu Hospitality & Local Businesses",
       subheading:
-        "From individual luxury villas to boutique hotel portfolios and boat fleets, we engineer systems that drive direct revenue.",
+        "From luxury villas and boutique hotels to local retail, car rentals, and service SMEs, we build software that scales your revenue.",
       s1Title: "Boutique Hotel Showcase Platforms",
       s1Desc:
         "Sub-second Next.js web applications with immersive visuals, multilingual SEO, and direct reservation integration.",
@@ -127,13 +131,16 @@ export const translations: Record<Language, TranslationDictionary> = {
       s4Title: "Digital QR Restaurant & Bar Menus",
       s4Desc:
         "Multi-language contactless menus with Greek myDATA tax compliance, live price updates, and automated allergen filters.",
+      s5Title: "Small Business (SME) Digital Transformation",
+      s5Desc:
+        "Full digital modernization for Corfu businesses: online appointment scheduling, e-commerce, WhatsApp CRM workflows, and automated AADE myDATA invoicing.",
       learnMore: "Explore Service",
     },
     portfolio: {
       badge: "Real Production Proof",
       heading: "Live Client Platforms in Corfu",
       subheading:
-        "Boutique hotels, luxury villa direct engines, and boat excursions active right now in the Ionian.",
+        "Boutique hotels, luxury villa direct engines, boat excursions, and digital workflows active right now in the Ionian.",
       viewCaseStudies: "View Detailed Case Studies",
     },
     calculator: {
@@ -150,17 +157,17 @@ export const translations: Record<Language, TranslationDictionary> = {
     },
     contact: {
       badge: "Start Your Project",
-      title: "Ready to Accelerate Your Direct Bookings?",
+      title: "Ready to Accelerate Your Digital Transformation?",
       subtitle:
-        "Book a direct strategy call or message founder Evangelos Lampos to discuss your property, yacht charter, or hospitality project in Corfu.",
+        "Book a direct strategy call or message founder Evangelos Lampos to discuss your property, SME digital upgrade, yacht charter, or business in Corfu.",
       whatsapp: "Chat on WhatsApp",
       email: "Send Email",
       location: "Corfu Town, Ionian Islands, Greece",
-      formName: "Your Full Name",
+      formName: "Your Full Name / Business Name",
       formEmail: "Email Address",
-      formProperty: "Property / Business Type",
-      formMessage: "Tell us about your project or current OTA setup...",
-      submit: "Request Technical & Direct Booking Audit",
+      formProperty: "Business / Property Type",
+      formMessage: "Tell us about your project, booking needs, or digital upgrade goals...",
+      submit: "Request Free Technical & Digital Audit",
       privacy: "Direct response within 24 hours. No sales spam.",
     },
     footer: {
@@ -172,7 +179,8 @@ export const translations: Record<Language, TranslationDictionary> = {
     nav: {
       hotels: "Ξενοδοχεία",
       villas: "Βίλες",
-      boats: "Σκάφη & Εκδρομές",
+      boats: "Σκάφη",
+      digitalTransformation: "Ψηφιακός Μετασχηματισμός",
       caseStudies: "Έργα & Μελέτες",
       aiDemo: "AI Demo",
       tagline: "Studio & Tech Lab",
@@ -180,12 +188,12 @@ export const translations: Record<Language, TranslationDictionary> = {
       backHome: "Επιστροφή στην Αρχική",
     },
     hero: {
-      badge: "Το Κορυφαίο Digital Agency Τουρισμού & Φιλοξενίας στην Κέρκυρα",
+      badge: "Το Κορυφαίο Digital Agency & Tech Lab στην Κέρκυρα",
       titleLine1: "Κατασκευάζουμε Υπερταχείες Ιστοσελίδες &",
-      titleHighlight: "Μηχανές Απευθείας Κρατήσεων",
-      titleLine2: "Χωρίς Προμήθειες Booking & Airbnb",
+      titleHighlight: "Συστήματα Ψηφιακού Μετασχηματισμού",
+      titleLine2: "Για Επιχειρήσεις & Τουρισμό στην Κέρκυρα",
       subtitle:
-        "Εξειδικευμένο λογισμικό, αμφίδρομος συγχρονισμός ημερολογίων (Beds24 & iCal), οπτική τεχνητή νοημοσύνη (AI) και συστήματα απευθείας κρατήσεων με 0% προμήθεια για ξενοδοχεία, πολυτελείς βίλες, ενοικιάσεις σκαφών και μεταφορές στην Κέρκυρα.",
+        "Εξειδικευμένο λογισμικό, ψηφιακός εκσυγχρονισμός μικρομεσαίων επιχειρήσεων (ΜμΕ), αμφίδρομος συγχρονισμός ημερολογίων (Beds24 & iCal), τεχνητή νοημοσύνη (AI) και συστήματα απευθείας κρατήσεων με 0% προμήθεια.",
       ctaPrimary: "Υπολογίστε το Κέρδος σας",
       ctaSecondary: "Δείτε Ζωντανά Έργα μας",
       metric1Val: "< 0.8δ",
@@ -193,15 +201,15 @@ export const translations: Record<Language, TranslationDictionary> = {
       metric2Val: "0%",
       metric2Label: "Προμήθεια σε Πλατφόρμες",
       metric3Val: "100%",
-      metric3Label: "Custom Κώδικας & iCal Sync",
+      metric3Label: "Custom Κώδικας & Αυτοματισμοί",
       metric4Val: "24/7",
-      metric4Label: "AI Ψηφιακός Concierge",
+      metric4Label: "AI Ψηφιακός Βοηθός",
     },
     services: {
       badge: "Υπηρεσίες & Λογισμικό",
-      heading: "Σχεδιασμένο Αποκλειστικά για τον Τουρισμό της Κέρκυρας",
+      heading: "Σχεδιασμένο για τον Τουρισμό & τις Επιχειρήσεις της Κέρκυρας",
       subheading:
-        "Από μεμονωμένες πολυτελείς βίλες μέχρι boutique ξενοδοχεία και στόλους σκαφών, δημιουργούμε συστήματα που μεγιστοποιούν τα απευθείας έσοδά σας.",
+        "Από πολυτελείς βίλες και boutique ξενοδοχεία μέχρι τοπικά καταστήματα, ενοικιάσεις αυτοκινήτων και επιχειρήσεις υπηρεσιών, κατασκευάζουμε συστήματα που εκσυγχρονίζουν και αυξάνουν τα έσοδά σας.",
       s1Title: "Ιστοσελίδες Boutique Ξενοδοχείων",
       s1Desc:
         "Next.js web εφαρμογές με άμεση απόκριση, εντυπωσιακά γραφικά, πολυγλωσσικό SEO και ενσωματωμένη μηχανή κρατήσεων.",
@@ -214,13 +222,16 @@ export const translations: Record<Language, TranslationDictionary> = {
       s4Title: "Ψηφιακοί QR Κατάλογοι Εστιατορίων",
       s4Desc:
         "Πολυγλωσσικά ανέπαφα μενού, πλήρης διασύνδεση με myDATA, ζωντανή ενημέρωση τιμών και φίλτρα αλλεργιογόνων.",
+      s5Title: "Ψηφιακός Μετασχηματισμός Μικρομεσαίων Επιχειρήσεων (ΜμΕ)",
+      s5Desc:
+        "Ολοκληρωμένος ψηφιακός εκσυγχρονισμός για επιχειρήσεις της Κέρκυρας: online ραντεβού, ηλεκτρονικό εμπόριο, αυτοματισμοί WhatsApp/CRM και διασύνδεση με ΑΑΔΕ myDATA.",
       learnMore: "Μάθετε Περισσότερα",
     },
     portfolio: {
       badge: "Αποδεδειγμένα Έργα Παραγωγής",
       heading: "Ζωντανές Πλατφόρμες Πελατών στην Κέρκυρα",
       subheading:
-        "Boutique ξενοδοχεία, απευθείας μηχανές κρατήσεων για βίλες και πλατφόρμες θαλάσσιων εκδρομών που λειτουργούν αυτή τη στιγμή στο Ιόνιο.",
+        "Boutique ξενοδοχεία, απευθείας μηχανές κρατήσεων, πλατφόρμες σκαφών και ψηφιακές εφαρμογές που λειτουργούν αυτή τη στιγμή στο Ιόνιο.",
       viewCaseStudies: "Δείτε Όλα τα Case Studies",
     },
     calculator: {
@@ -237,17 +248,17 @@ export const translations: Record<Language, TranslationDictionary> = {
     },
     contact: {
       badge: "Ξεκινήστε Σήμερα",
-      title: "Έτοιμοι να Αυξήσετε τις Απευθείας Κρατήσεις σας;",
+      title: "Έτοιμοι για τον Ψηφιακό Μετασχηματισμό της Επιχείρησής σας;",
       subtitle:
-        "Κλείστε μια δωρεάν συμβουλευτική κλήση ή επικοινωνήστε απευθείας με τον Ευάγγελο Λάμπο για να συζητήσουμε τις ανάγκες του καταλύματος ή της επιχείρησής σας.",
+        "Κλείστε μια δωρεάν συμβουλευτική κλήση ή επικοινωνήστε απευθείας με τον Ευάγγελο Λάμπο για να σχεδιάσουμε την ψηφιακή αναβάθμιση της επιχείρησής σας.",
       whatsapp: "Μήνυμα στο WhatsApp",
       email: "Αποστολή Email",
       location: "Πόλη της Κέρκυρας, Ιόνια Νησιά, Ελλάδα",
-      formName: "Ονοματεπώνυμο",
+      formName: "Ονοματεπώνυμο / Όνομα Επιχείρησης",
       formEmail: "Email Επικοινωνίας",
       formProperty: "Είδος Επιχείρησης / Καταλύματος",
-      formMessage: "Περιγράψτε μας το έργο σας ή το τρέχον σύστημα κρατήσεών σας...",
-      submit: "Αίτηση Δωρεάν Τεχνικού Ελέγχου & Audit",
+      formMessage: "Περιγράψτε μας το έργο σας ή τις ανάγκες ψηφιοποίησης της επιχείρησής σας...",
+      submit: "Αίτηση Δωρεάν Τεχνικού & Ψηφιακού Ελέγχου",
       privacy: "Άμεση απάντηση εντός 24 ωρών. Χωρίς spam.",
     },
     footer: {

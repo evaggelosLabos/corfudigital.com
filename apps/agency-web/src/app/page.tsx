@@ -97,6 +97,13 @@ export default function Home() {
       href: "/services/boat-tours-transfers",
       badge: isEl ? "Αυτοματισμός Στόλου" : "Fleet Automation",
     },
+    {
+      icon: <Globe className="w-6 h-6 text-emerald-600" />,
+      title: t.services.s5Title,
+      desc: t.services.s5Desc,
+      href: "/services/digital-transformation",
+      badge: isEl ? "Ψηφιακός Μετασχηματισμός" : "SME Digital Upgrade",
+    },
   ];
 
   return (
@@ -113,10 +120,11 @@ export default function Home() {
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-stone-600">
+          <nav className="hidden md:flex items-center gap-5 lg:gap-6 text-sm font-medium text-stone-600">
             <Link href="/services/hotel-websites" className="hover:text-sky-600 transition">{t.nav.hotels}</Link>
             <Link href="/services/villa-booking-engines" className="hover:text-sky-600 transition">{t.nav.villas}</Link>
             <Link href="/services/boat-tours-transfers" className="hover:text-sky-600 transition">{t.nav.boats}</Link>
+            <Link href="/services/digital-transformation" className="hover:text-sky-600 transition">{t.nav.digitalTransformation}</Link>
             <Link href="/case-studies" className="hover:text-sky-600 transition">{t.nav.caseStudies}</Link>
             <a href="#ai-demo" className="hover:text-sky-600 transition flex items-center gap-1 text-sky-600 font-semibold">
               <Bot className="w-4 h-4" /> {t.nav.aiDemo}
