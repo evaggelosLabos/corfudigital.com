@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useRef, useEffect } from "react";
 import { Sparkles, Send, Bot, User, ArrowRight, CheckCircle2, MessageSquare, Compass, ShieldCheck } from "lucide-react";
@@ -16,7 +16,7 @@ export const AiHospitalityAssistant = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       sender: "ai",
-      text: "👋 Hello! I am the **IonianCode AI Hospitality Assistant**.\n\nI can show you how our custom software cuts OTA commissions, demonstrate real-time booking calculations, or answer questions about our live production projects in Corfu (*Marcopolo Hotel*, *Aeolina Villas*, *Ion Boats*).",
+      text: "👋 Hello! I am the **Corfu Digital AI Hospitality Assistant**.\n\nI can show you how our custom software cuts OTA commissions, demonstrate real-time booking calculations, or answer questions about our live production projects in Corfu (*Marcopolo Hotel*, *Aeolina Villas*, *Ion Boats*).",
       time: "Just now",
       quickReplies: [
         "How do you eliminate 20% Airbnb/Booking fees?",
