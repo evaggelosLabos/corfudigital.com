@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "start": "npm --workspace=agency-web run start",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck"
