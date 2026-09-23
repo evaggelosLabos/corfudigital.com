@@ -71,9 +71,9 @@ export default function CaseStudiesPage() {
           <Link href="/" className="inline-flex items-center text-sm font-semibold text-stone-700 hover:text-sky-600 transition gap-2">
             <ArrowLeft className="w-4 h-4" /> Back to Studio Home
           </Link>
-          <div className="text-xl font-black tracking-tight text-stone-900">
+          <Link href="/" className="text-xl font-black tracking-tight text-stone-900 hover:opacity-90 transition">
             CORFU<span className="text-sky-600">DIGITAL</span>
-          </div>
+          </Link>
         </div>
       </header>
 

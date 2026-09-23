@@ -87,14 +87,14 @@ export default function Home() {
       {/* Navigation */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-stone-200/80">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3 group hover:opacity-90 transition cursor-pointer">
             <span className="text-2xl font-black tracking-tight text-stone-900">
               CORFU<span className="text-sky-600">DIGITAL</span>
             </span>
             <span className="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-sky-50 text-sky-800 border border-sky-200/60">
               Studio & Tech Lab
             </span>
-          </div>
+          </Link>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-stone-600">
             <Link href="/services/hotel-websites" className="hover:text-sky-600 transition">Hotels</Link>
             <Link href="/services/villa-booking-engines" className="hover:text-sky-600 transition">Villas</Link>

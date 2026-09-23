@@ -24,9 +24,9 @@ export default function HotelWebsitesPage() {
           <Link href="/" className="inline-flex items-center text-sm font-semibold text-slate-700 hover:text-blue-600">
             <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
           </Link>
-          <div className="text-sm font-bold text-slate-900">
+          <Link href="/" className="text-sm font-bold text-slate-900 hover:opacity-90 transition">
             CORFU<span className="text-blue-600">DIGITAL</span>
-          </div>
+          </Link>
         </div>
       </header>
 
