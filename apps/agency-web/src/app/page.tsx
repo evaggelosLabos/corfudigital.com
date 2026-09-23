@@ -276,7 +276,7 @@ export default function Home() {
       {/* Modern Engineering Stack Section */}
       <section className="py-24 bg-slate-900 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <TechStackShowcase />
+          <TechStackShowcase lang={lang} />
         </div>
       </section>
 
