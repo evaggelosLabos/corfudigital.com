@@ -1,4 +1,4 @@
-﻿import type { NextConfig } from "next";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -22,6 +22,20 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
       },
     ],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/services/:slug*",
+        destination: "/el/services/:slug*",
+        permanent: true,
+      },
+      {
+        source: "/case-studies",
+        destination: "/el/case-studies",
+        permanent: true,
+      },
+    ];
   },
 };
 

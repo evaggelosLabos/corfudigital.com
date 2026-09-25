@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { Language, translations, TranslationDictionary } from "../i18n/translations";
+import { usePathname, useRouter } from "next/navigation";
 
 interface LanguageContextType {
   lang: Language;
@@ -12,25 +13,37 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [lang, setLangState] = useState<Language>("en");
+export const LanguageProvider: React.FC<{ 
+  children: React.ReactNode;
+  initialLang?: Language;
+}> = ({ children, initialLang = "el" }) => {
+  const [lang, setLangState] = useState<Language>(initialLang);
+  const pathname = usePathname();
+  const router = useRouter();
 
+  // Keep state in sync with URL
   useEffect(() => {
-    const saved = localStorage.getItem("corfu_digital_lang") as Language | null;
-    if (saved === "en" || saved === "el") {
-      setLangState(saved);
-    } else {
-      // Check browser language
-      const browserLang = navigator.language.toLowerCase();
-      if (browserLang.startsWith("el")) {
-        setLangState("el");
-      }
+    if (pathname?.startsWith("/en")) {
+      setLangState("en");
+    } else if (pathname?.startsWith("/el")) {
+      setLangState("el");
     }
-  }, []);
+  }, [pathname]);
 
   const setLang = (newLang: Language) => {
     setLangState(newLang);
-    localStorage.setItem("corfu_digital_lang", newLang);
+    if (!pathname) return;
+
+    let targetPath = pathname;
+    if (pathname.startsWith("/en")) {
+      targetPath = pathname.replace(/^\/en/, `/${newLang}`);
+    } else if (pathname.startsWith("/el")) {
+      targetPath = pathname.replace(/^\/el/, `/${newLang}`);
+    } else {
+      targetPath = `/${newLang}${pathname === "/" ? "" : pathname}`;
+    }
+
+    router.push(targetPath);
   };
 
   const toggleLang = () => {

@@ -2,12 +2,12 @@
 
 import React from "react";
 import { Badge, Button } from "@repo/ui";
-import { ArrowLeft, CheckCircle2, Anchor, Compass, Calendar, DollarSign } from "lucide-react";
+import { ArrowLeft, Anchor, Compass, DollarSign } from "lucide-react";
 import Link from "next/link";
-import { useLanguage } from "../../../context/LanguageContext";
-import { LanguageToggle } from "../../../components/LanguageToggle";
+import { useLanguage } from "../context/LanguageContext";
+import { LanguageToggle } from "../components/LanguageToggle";
 
-export default function BoatToursTransfersPage() {
+export function BoatToursTransfersView() {
   const { lang } = useLanguage();
   const isEl = lang === "el";
 
@@ -15,12 +15,12 @@ export default function BoatToursTransfersPage() {
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
       <header className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-          <Link href="/" className="inline-flex items-center text-sm font-semibold text-slate-700 hover:text-blue-600">
+          <Link href={`/${lang}`} className="inline-flex items-center text-sm font-semibold text-slate-700 hover:text-blue-600">
             <ArrowLeft className="w-4 h-4 mr-2" /> {isEl ? "Επιστροφή στην Αρχική" : "Back to Home"}
           </Link>
           <div className="flex items-center gap-4">
             <LanguageToggle />
-            <Link href="/" className="text-sm font-bold text-slate-900 hover:opacity-90 transition">
+            <Link href={`/${lang}`} className="text-sm font-bold text-slate-900 hover:opacity-90 transition">
               CORFU<span className="text-blue-600">DIGITAL</span>
             </Link>
           </div>
@@ -41,7 +41,7 @@ export default function BoatToursTransfersPage() {
               : "Automate hourly charter reservations, fuel calculations, skipper options, online deposit collection, and airport transfer dispatch."}
           </p>
           <div className="mt-8 flex justify-center gap-4">
-            <Link href="/#contact">
+            <Link href={`/${lang}#contact`}>
               <Button size="lg" variant="primary">
                 {isEl ? "Σχεδιάστε την Πλατφόρμα του Στόλου σας" : "Build Your Fleet Booking Engine"}
               </Button>

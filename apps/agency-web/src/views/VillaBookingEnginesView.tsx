@@ -2,12 +2,12 @@
 
 import React from "react";
 import { Badge, Button } from "@repo/ui";
-import { ArrowLeft, CheckCircle2, Calendar, ShieldCheck, DollarSign, RefreshCw } from "lucide-react";
+import { ArrowLeft, DollarSign, Calendar, ShieldCheck } from "lucide-react";
 import Link from "next/link";
-import { useLanguage } from "../../../context/LanguageContext";
-import { LanguageToggle } from "../../../components/LanguageToggle";
+import { useLanguage } from "../context/LanguageContext";
+import { LanguageToggle } from "../components/LanguageToggle";
 
-export default function VillaBookingEnginesPage() {
+export function VillaBookingEnginesView() {
   const { lang } = useLanguage();
   const isEl = lang === "el";
 
@@ -15,12 +15,12 @@ export default function VillaBookingEnginesPage() {
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
       <header className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-          <Link href="/" className="inline-flex items-center text-sm font-semibold text-slate-700 hover:text-blue-600">
+          <Link href={`/${lang}`} className="inline-flex items-center text-sm font-semibold text-slate-700 hover:text-blue-600">
             <ArrowLeft className="w-4 h-4 mr-2" /> {isEl ? "Επιστροφή στην Αρχική" : "Back to Home"}
           </Link>
           <div className="flex items-center gap-4">
             <LanguageToggle />
-            <Link href="/" className="text-sm font-bold text-slate-900 hover:opacity-90 transition">
+            <Link href={`/${lang}`} className="text-sm font-bold text-slate-900 hover:opacity-90 transition">
               CORFU<span className="text-blue-600">DIGITAL</span>
             </Link>
           </div>
@@ -41,7 +41,7 @@ export default function VillaBookingEnginesPage() {
               : "Capture direct guest reservations with instant Stripe payments and 2-way real-time calendar synchronization (Beds24 & iCal) to prevent double-bookings."}
           </p>
           <div className="mt-8 flex justify-center gap-4">
-            <Link href="/#contact">
+            <Link href={`/${lang}#contact`}>
               <Button size="lg" variant="primary">
                 {isEl ? "Υπολογίστε το Κέρδος σας & Ζητήστε Έλεγχο" : "Calculate Your Commission Savings"}
               </Button>
@@ -59,32 +59,32 @@ export default function VillaBookingEnginesPage() {
             </h3>
             <p className="text-slate-600 text-sm leading-relaxed">
               {isEl
-                ? "Αντί για το 15%–20% που παρακρατούν η Booking.com και το Airbnb, πληρώνετε μόνο το τυπικό ~1.6% τραπεζικής εκκαθάρισης μέσω Stripe."
-                : "Instead of losing 15% to 20% to OTAs, you retain 100% of your booking rate minus standard ~1.6% Stripe credit card processing."}
+                ? "Κρατήστε το 100% των εσόδων σας πληρώνοντας μόνο τη στάνταρ τραπεζική εκκαθάριση (~1.6%) αντί για 18%–20% στις πλατφόρμες."
+                : "Keep 100% of your villa income by paying standard ~1.6% bank fees instead of 18%-20% middleman fees on every booking."}
             </p>
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-xs">
-            <RefreshCw className="w-8 h-8 text-blue-600 mb-4" />
+            <Calendar className="w-8 h-8 text-blue-600 mb-4" />
             <h3 className="text-lg font-bold text-slate-900 mb-2">
-              {isEl ? "Αμφίδρομος Συγχρονισμός iCal & Beds24" : "2-Way Real-Time Sync"}
+              {isEl ? "Αμφίδρομο iCal & Beds24 Sync" : "2-Way Calendar Sync"}
             </h3>
             <p className="text-slate-600 text-sm leading-relaxed">
               {isEl
-                ? "Οι κρατήσεις από την ιστοσελίδα σας μπλοκάρουν αμέσως τις ημερομηνίες σε Airbnb, Booking.com και VRBO. Μηδενικός κίνδυνος διπλοκράτησης."
-                : "Live 2-way sync across Airbnb, Booking.com, and VRBO ensures instant calendar updates with zero risk of double bookings."}
+                ? "Όταν μια ημερομηνία κλειστεί στην ιστοσελίδα σας, κλειδώνει αυτόματα σε Airbnb, Booking.com και VRBO σε δευτερόλεπτα."
+                : "Dates booked on your direct website instantly lock on Airbnb, Booking.com, and VRBO to make double-bookings impossible."}
             </p>
           </div>
 
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-xs">
             <ShieldCheck className="w-8 h-8 text-indigo-600 mb-4" />
             <h3 className="text-lg font-bold text-slate-900 mb-2">
-              {isEl ? "Δικά σας Στοιχεία Επισκεπτών" : "Direct Guest Retention"}
+              {isEl ? "Εγγύηση Ζημιών & Προκαταβολές" : "Damage Deposits & Security"}
             </h3>
             <p className="text-slate-600 text-sm leading-relaxed">
               {isEl
-                ? "Κρατάτε τα emails και τα τηλέφωνα των πελατών σας, δημιουργώντας πελατολόγιο για επαναλαμβανόμενες κρατήσεις κάθε καλοκαίρι."
-                : "You own your guest data (emails, phone numbers), allowing you to re-market directly for recurring stays year after year."}
+                ? "Αυτοματοποιημένη προέγκριση εγγύησης ζημιών και είσπραξη προκαταβολής 30% τη στιγμή της κράτησης."
+                : "Automated security deposit hold on guest credit cards and seamless 30% upfront booking deposits."}
             </p>
           </div>
         </div>
@@ -93,11 +93,11 @@ export default function VillaBookingEnginesPage() {
         <div className="mt-16 bg-blue-50 border border-blue-200 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <Badge color="blue">{isEl ? "Παράδειγμα Παραγωγής" : "Production Example"}</Badge>
-            <h3 className="text-2xl font-bold text-slate-900 mt-2">AEOLINA Luxury Villas, Corfu</h3>
+            <h3 className="text-2xl font-bold text-slate-900 mt-2">AEOLINA Luxury Villas Corfu</h3>
             <p className="text-slate-600 text-sm mt-1 max-w-xl leading-relaxed">
               {isEl
-                ? "Δείτε πώς η πλατφόρμα της AEOLINA Luxury Villas στα Επισκοπιανά Κέρκυρας λαμβάνει απευθείας κρατήσεις με συγχρονισμό iCal."
-                : "Explore how AEOLINA Luxury Villas in Episkopiana captures direct guest bookings with automated calendar synchronization."}
+                ? "Δείτε πώς η AEOLINA Luxury Villas στα Επισκοπιανά Κέρκυρας διαχειρίζεται απευθείας κρατήσεις με μηδενική προμήθεια."
+                : "See how AEOLINA Luxury Villas in Episkopiana, Corfu captures high-ticket direct guest stays with 0% commissions."}
             </p>
           </div>
           <a

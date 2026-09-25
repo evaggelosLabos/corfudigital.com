@@ -2,12 +2,12 @@
 
 import React from "react";
 import { Badge, Button } from "@repo/ui";
-import { ArrowLeft, CheckCircle2, Zap, Smartphone, Globe, Shield, CreditCard, MessageSquare, Database, Sparkles, TrendingUp, Cpu } from "lucide-react";
+import { ArrowLeft, CheckCircle2, CreditCard, Database, MessageSquare, Cpu } from "lucide-react";
 import Link from "next/link";
-import { useLanguage } from "../../../context/LanguageContext";
-import { LanguageToggle } from "../../../components/LanguageToggle";
+import { useLanguage } from "../context/LanguageContext";
+import { LanguageToggle } from "../components/LanguageToggle";
 
-export default function DigitalTransformationPage() {
+export function DigitalTransformationView() {
   const { lang } = useLanguage();
   const isEl = lang === "el";
 
@@ -15,12 +15,12 @@ export default function DigitalTransformationPage() {
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
       <header className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-          <Link href="/" className="inline-flex items-center text-sm font-semibold text-slate-700 hover:text-blue-600">
+          <Link href={`/${lang}`} className="inline-flex items-center text-sm font-semibold text-slate-700 hover:text-blue-600">
             <ArrowLeft className="w-4 h-4 mr-2" /> {isEl ? "Επιστροφή στην Αρχική" : "Back to Home"}
           </Link>
           <div className="flex items-center gap-4">
             <LanguageToggle />
-            <Link href="/" className="text-sm font-bold text-slate-900 hover:opacity-90 transition">
+            <Link href={`/${lang}`} className="text-sm font-bold text-slate-900 hover:opacity-90 transition">
               CORFU<span className="text-blue-600">DIGITAL</span>
             </Link>
           </div>
@@ -44,7 +44,7 @@ export default function DigitalTransformationPage() {
               : "From local retail stores and clinics to car rentals, tour agencies, and service businesses across Corfu — we build custom digital infrastructure that reduces manual work and multiplies your revenue."}
           </p>
           <div className="mt-8 flex justify-center gap-4">
-            <Link href="/#contact">
+            <Link href={`/${lang}#contact`}>
               <Button size="lg" variant="primary">
                 {isEl ? "Αίτηση Δωρεάν Ψηφιακού Ελέγχου Επιχείρησης" : "Schedule a Free Digital Transformation Audit"}
               </Button>
@@ -176,7 +176,7 @@ export default function DigitalTransformationPage() {
                 : "Talk directly with software engineer Evangelos Lampos to map out your digital roadmap and automate manual overhead."}
             </p>
           </div>
-          <Link href="/#contact" className="shrink-0">
+          <Link href={`/${lang}#contact`} className="shrink-0">
             <Button size="lg" variant="secondary" className="bg-white text-blue-700 hover:bg-blue-50 font-bold">
               {isEl ? "Ξεκινήστε την Ψηφιακή σας Αναβάθμιση" : "Start Your Digital Upgrade"}
             </Button>

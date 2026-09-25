@@ -3,38 +3,13 @@ import "./globals.css";
 import { LanguageProvider } from "../context/LanguageContext";
 
 export const metadata: Metadata = {
-  title: "Corfu Digital | Web Engineering, Direct Booking Engines & SME Digital Transformation",
-  description: "Bespoke web development, zero-commission direct booking engines, visual AI, and small business digital transformation in Corfu, Greece. myDATA, Beds24 & custom software.",
-  keywords: [
-    "κατασκευη ιστοσελιδων κερκυρα",
-    "ψηφιακος μετασχηματισμος κερκυρα",
-    "digital agency corfu",
-    "corfu web design",
-    "booking engine για βιλες",
-    "villa direct booking system corfu",
-    "hotel web development corfu",
-    "ηλεκτρονικη τιμολογηση mydata κερκυρα",
-    "qr menu εστιατορια κερκυρα",
-    "συστήματα κρατήσεων σκαφών κέρκυρα"
-  ],
+  metadataBase: new URL("https://corfudigital.com"),
+  title: {
+    template: "%s | Corfu Digital",
+    default: "Κατασκευή Ιστοσελίδων Κέρκυρα | Corfu Digital - Web Engineering & Booking Tech",
+  },
+  description: "Bespoke web development, zero-commission direct booking engines, Beds24 / iCal sync, and small business digital transformation in Corfu, Greece.",
   authors: [{ name: "Evangelos Lampos" }],
-  alternates: {
-    canonical: "https://corfudigital.com",
-    languages: {
-      "en": "https://corfudigital.com",
-      "el": "https://corfudigital.com",
-      "x-default": "https://corfudigital.com",
-    },
-  },
-  openGraph: {
-    title: "Corfu Digital | Digital Agency, Web Engineering & Booking Tech",
-    description: "Modern websites, 0% commission booking engines, and digital transformation for businesses & tourism in Corfu, Greece.",
-    url: "https://corfudigital.com",
-    siteName: "Corfu Digital",
-    locale: "en_US",
-    alternateLocale: ["el_GR"],
-    type: "website",
-  },
   robots: {
     index: true,
     follow: true,
@@ -129,7 +104,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="el" className="scroll-smooth">
       <head>
         <script
           type="application/ld+json"

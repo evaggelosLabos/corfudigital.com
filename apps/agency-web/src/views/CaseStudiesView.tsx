@@ -4,10 +4,10 @@ import React from "react";
 import { Badge, Button, ProjectMockupCard } from "@repo/ui";
 import { ArrowLeft, Sparkles } from "lucide-react";
 import Link from "next/link";
-import { useLanguage } from "../../context/LanguageContext";
-import { LanguageToggle } from "../../components/LanguageToggle";
+import { useLanguage } from "../context/LanguageContext";
+import { LanguageToggle } from "../components/LanguageToggle";
 
-export default function CaseStudiesPage() {
+export function CaseStudiesView() {
   const { lang } = useLanguage();
   const isEl = lang === "el";
 
@@ -58,82 +58,65 @@ export default function CaseStudiesPage() {
       metrics: isEl ? "Αυτοματοποιημένο Dispatch" : "Automated Dispatch",
       link: "https://corfutransfersapp.com",
       imageUrl: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&q=80",
-      imageAlt: "Corfu Executive Airport Transfer Logistics",
-    },
-    {
-      title: "GT QR Menu & Ordering",
-      category: isEl ? "Ψηφιακό Μενού & Εστίαση" : "Hospitality & Restaurant SaaS",
-      location: isEl ? "Ελλάδα & Κέρκυρα" : "Greece",
-      description: isEl
-        ? "Ανέπαφος ψηφιακός κατάλογος QR και πλατφόρμα παραγγελιών για εστιατόρια, beach bars και ξενοδοχεία στην Κέρκυρα με πολυγλωσσική υποστήριξη."
-        : "Contactless digital QR menu and table ordering platform for restaurants, beach bars, and hotel dining in Corfu with multi-language support.",
-      metrics: isEl ? "Πολυγλωσσικό QR Menu" : "Multi-Language QR",
-      link: "https://qr-menu.gtsystems.gr",
-      imageUrl: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
-      imageAlt: "Restaurant Digital QR Menu and Ordering System",
+      imageAlt: "Corfu Airport Transfers Vehicle Fleet",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-stone-50 text-stone-900 flex flex-col font-sans">
-      {/* Top Header */}
-      <header className="bg-white border-b border-stone-200/80">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
-          <Link href="/" className="inline-flex items-center text-sm font-semibold text-stone-700 hover:text-sky-600 transition gap-2">
-            <ArrowLeft className="w-4 h-4" /> {isEl ? "Επιστροφή στην Αρχική" : "Back to Studio Home"}
+    <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
+      <header className="bg-white border-b border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+          <Link href={`/${lang}`} className="inline-flex items-center text-sm font-semibold text-slate-700 hover:text-blue-600">
+            <ArrowLeft className="w-4 h-4 mr-2" /> {isEl ? "Επιστροφή στην Αρχική" : "Back to Home"}
           </Link>
           <div className="flex items-center gap-4">
             <LanguageToggle />
-            <Link href="/" className="text-xl font-black tracking-tight text-stone-900 hover:opacity-90 transition">
-              CORFU<span className="text-sky-600">DIGITAL</span>
+            <Link href={`/${lang}`} className="text-sm font-bold text-slate-900 hover:opacity-90 transition">
+              CORFU<span className="text-blue-600">DIGITAL</span>
             </Link>
           </div>
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="py-20 bg-white border-b border-stone-200/80">
+      <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-sky-800 text-xs font-semibold border border-sky-200/60 mb-6">
-            <Sparkles className="w-3.5 h-3.5 text-sky-600" />
-            {isEl ? "Αποδεδειγμένα Έργα Παραγωγής" : "Live Client Production Proof"}
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-stone-900 tracking-tight">
-            {isEl ? "Λογισμικό & Μηχανές Κρατήσεων Σχεδιασμένες για την Κέρκυρα" : "Software & Direct Booking Platforms Engineered for Corfu"}
-          </h1>
-          <p className="text-stone-600 text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
+          <Badge color="blue">{isEl ? "Πραγματικά Έργα Παραγωγής" : "Production Case Studies"}</Badge>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mt-4 tracking-tight leading-tight">
             {isEl 
-              ? "Από boutique ξενοδοχεία και πολυτελείς βίλες μέχρι συστήματα κρατήσεων σκαφών και μεταφορών — δείτε πώς η μηχανική μας φέρνει μετρήσιμα απευθείας έσοδα."
-              : "From boutique hotels and luxury villa direct engines to boat excursion booking systems—explore how our engineering drives tangible direct revenue."}
+              ? "Ψηφιακές Εμπειρίες & Συστήματα Κρατήσεων στην Κέρκυρα" 
+              : "High-Performance Digital Platforms in Corfu, Greece"}
+          </h1>
+          <p className="text-slate-600 text-lg sm:text-xl mt-6 max-w-2xl mx-auto leading-relaxed">
+            {isEl
+              ? "Δείτε πώς βοηθήσαμε ξενοδοχεία, ιδιοκτήτες πολυτελών κατοικιών, στόλους σκαφών και εταιρείες μεταφορών στην Κέρκυρα να αποκτήσουν τεχνολογικό πλεονέκτημα και να αυξήσουν τα απευθείας έσοδά τους."
+              : "See how we empower boutique hotels, luxury villa hosts, boat charter fleets, and transfer operators across Corfu with high-speed web tech and zero-commission booking engines."}
           </p>
         </div>
       </section>
 
-      {/* Case Studies Grid */}
-      <section className="py-20 max-w-6xl mx-auto px-4 sm:px-6 w-full flex-1">
-        <div className="grid md:grid-cols-2 gap-8 items-stretch">
+      <section className="py-16 max-w-6xl mx-auto px-4 sm:px-6 w-full">
+        <div className="grid md:grid-cols-2 gap-8">
           {allProjects.map((project, idx) => (
             <ProjectMockupCard key={idx} {...project} />
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-20 bg-stone-900 text-white rounded-3xl p-10 sm:p-14 text-center max-w-3xl mx-auto shadow-xl">
-          <h3 className="text-2xl sm:text-3xl font-bold">
-            {isEl ? "Θέλετε παρόμοια αποτελέσματα για το κατάλυμά σας;" : "Want Similar Direct Booking Results for Your Business?"}
-          </h3>
-          <p className="text-stone-400 text-sm mt-3 max-w-xl mx-auto">
-            {isEl 
-              ? "Επικοινωνήστε σήμερα μαζί μας για έναν δωρεάν έλεγχο ταχύτητας και σχεδιασμό της δικής σας μηχανής απευθείας κρατήσεων."
-              : "Let's build a dedicated, zero-commission booking pathway or digital platform tailored for your Corfu hospitality operations."}
+        <div className="mt-20 bg-slate-900 rounded-3xl p-8 sm:p-12 text-white text-center flex flex-col items-center">
+          <Sparkles className="w-10 h-10 text-blue-400 mb-4" />
+          <h2 className="text-3xl font-extrabold tracking-tight">
+            {isEl ? "Θέλετε να κατασκευάσουμε το δικό σας ψηφιακό project;" : "Want to Build Your Custom Digital Platform?"}
+          </h2>
+          <p className="text-slate-400 text-sm sm:text-base max-w-xl mt-2 mb-8">
+            {isEl
+              ? "Είτε χρειάζεστε νέα ιστοσελίδα, e-shop, είτε μηχανή κρατήσεων χωρίς προμήθειες, επικοινωνήστε μαζί μας για να συζητήσουμε τις ανάγκες σας."
+              : "Whether you need a new website, e-commerce store, or direct booking platform, contact us today to plan your project."}
           </p>
-          <div className="mt-8 flex justify-center">
-            <Link href="/#contact">
-              <Button size="lg" variant="primary">
-                {isEl ? "Ξεκινήστε το Δικό σας Έργο" : "Start Your Project Today"}
-              </Button>
-            </Link>
-          </div>
+          <Link href={`/${lang}#contact`}>
+            <Button size="lg" variant="primary">
+              {isEl ? "Ζητήστε Προσφορά Έργου" : "Request a Project Proposal"}
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
