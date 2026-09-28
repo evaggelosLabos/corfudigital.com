@@ -63,13 +63,23 @@ export const AiHospitalityAssistant: React.FC<AiHospitalityAssistantProps> = ({ 
     ]);
   }, [isEl]);
 
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatBodyRef = useRef<HTMLDivElement>(null);
+  const isFirstRender = useRef(true);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  const scrollToBottom = (smooth = true) => {
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTo({
+        top: chatBodyRef.current.scrollHeight,
+        behavior: smooth ? "smooth" : "auto",
+      });
+    }
   };
 
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     scrollToBottom();
   }, [messages, isTyping]);
 
@@ -182,7 +192,7 @@ export const AiHospitalityAssistant: React.FC<AiHospitalityAssistantProps> = ({ 
           </div>
 
           {/* Chat Body */}
-          <div className="flex-1 p-6 overflow-y-auto space-y-4 bg-stone-50/50">
+          <div ref={chatBodyRef} className="flex-1 p-6 overflow-y-auto space-y-4 bg-stone-50/50">
             {messages.map((msg, i) => (
               <div
                 key={i}
@@ -240,7 +250,6 @@ export const AiHospitalityAssistant: React.FC<AiHospitalityAssistantProps> = ({ 
                 <span className="italic">{isEl ? "Το Corfu Digital AI πληκτρολογεί..." : "Corfu Digital AI is typing..."}</span>
               </div>
             )}
-            <div ref={messagesEndRef} />
           </div>
 
           {/* Chat Input */}

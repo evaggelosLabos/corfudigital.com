@@ -9,7 +9,7 @@ import {
 import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Globe, Calendar, DollarSign, Smartphone, Compass, Anchor, Sparkles, Bot, Phone, Mail, MapPin } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
-import { LanguageToggle } from "../components/LanguageToggle";
+import { Navbar } from "../components/Navbar";
 
 export function HomeView() {
   const { lang, t } = useLanguage();
@@ -69,47 +69,7 @@ export function HomeView() {
   return (
     <div className="flex flex-col gap-24 pb-20 selection:bg-blue-100 selection:text-blue-900 font-sans">
       {/* Top Bar / Navigation */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-white/90 border-b border-slate-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-6">
-            <Link href={`/${lang}`} className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900">
-                CORFU<span className="text-blue-600">DIGITAL</span>
-              </span>
-              <span className="text-[10px] text-slate-700 tracking-wider uppercase font-semibold">
-                {isEl ? "Κατασκευή Ιστοσελίδων & Booking Tech" : t.nav.tagline}
-              </span>
-            </Link>
-          </div>
-
-          <div className="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-700">
-            <Link href={`/${lang}/services/hotel-websites`} className="hover:text-blue-600 transition">
-              {t.nav.hotels}
-            </Link>
-            <Link href={`/${lang}/services/villa-booking-engines`} className="hover:text-blue-600 transition">
-              {t.nav.villas}
-            </Link>
-            <Link href={`/${lang}/services/boat-tours-transfers`} className="hover:text-blue-600 transition">
-              {t.nav.boats}
-            </Link>
-            <Link href={`/${lang}/services/digital-transformation`} className="hover:text-blue-600 transition">
-              {t.nav.digitalTransformation}
-            </Link>
-            <Link href={`/${lang}/case-studies`} className="hover:text-blue-600 transition">
-              {t.nav.caseStudies}
-            </Link>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <LanguageToggle />
-            <a href="#contact" className="hidden sm:inline-block">
-              <Button size="sm" variant="primary">
-                {t.nav.requestProposal}
-              </Button>
-            </a>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-8 sm:pt-16 max-w-6xl mx-auto px-4 sm:px-6 w-full">
