@@ -122,10 +122,94 @@ export function HomeView() {
             </div>
           </div>
 
-          <div className="flex-1 w-full max-w-md lg:max-w-none flex justify-center">
-            <FounderTrustBadge lang={lang} />
+          {/* Hero Right Visual: Live Production Architecture Card */}
+          <div className="flex-1 w-full max-w-lg lg:max-w-none">
+            <div className="bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950 text-white rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl relative overflow-hidden">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></div>
+                  <span className="text-xs font-bold tracking-wider uppercase text-slate-300">
+                    {isEl ? "Ζωντανό Οικοσύστημα Παραγωγής" : "Live Production Ecosystem"}
+                  </span>
+                </div>
+                <span className="text-[10px] font-mono bg-blue-500/20 text-blue-300 border border-blue-500/30 px-2.5 py-0.5 rounded-full font-semibold">
+                  Next.js 15 + Edge
+                </span>
+              </div>
+
+              {/* Core Pillars */}
+              <div className="space-y-3.5 mb-6">
+                <div className="flex items-center justify-between p-3 rounded-xl bg-slate-800/60 border border-slate-700/50">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs">
+                      ⚡
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-white">
+                        {isEl ? "Ταχύτητα Φόρτωσης Web & Mobile" : "Sub-Second Mobile Load Speed"}
+                      </div>
+                      <div className="text-[11px] text-slate-400">
+                        {isEl ? "Lighthouse Score 99/100" : "Lighthouse 99/100 Core Web Vitals"}
+                      </div>
+                    </div>
+                  </div>
+                  <span className="text-xs font-mono font-bold text-emerald-400">&lt; 0.8s</span>
+                </div>
+
+                <div className="flex items-center justify-between p-3 rounded-xl bg-slate-800/60 border border-slate-700/50">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">
+                      💰
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-white">
+                        {isEl ? "Απευθείας Πληρωμές Stripe" : "Direct Stripe Guest Payments"}
+                      </div>
+                      <div className="text-[11px] text-slate-400">
+                        {isEl ? "Μηδενικές Προμήθειες Μεσαζόντων" : "Zero OTA Intermediary Commission"}
+                      </div>
+                    </div>
+                  </div>
+                  <span className="text-xs font-mono font-bold text-emerald-400">0% Fees</span>
+                </div>
+
+                <div className="flex items-center justify-between p-3 rounded-xl bg-slate-800/60 border border-slate-700/50">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-xs">
+                      🔄
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-white">
+                        {isEl ? "Αμφίδρομος Συγχρονισμός iCal" : "2-Way iCal Calendar Sync"}
+                      </div>
+                      <div className="text-[11px] text-slate-400">
+                        {isEl ? "Airbnb, Booking.com & Direct" : "Airbnb, Booking.com & Direct Sync"}
+                      </div>
+                    </div>
+                  </div>
+                  <span className="text-xs font-mono font-bold text-blue-400">Live Sync</span>
+                </div>
+              </div>
+
+              {/* Active Corfu Deployments */}
+              <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
+                <div className="text-[11px] text-slate-400 font-medium">
+                  {isEl ? "Ενεργά Έργα:" : "Active Works:"}
+                </div>
+                <div className="flex items-center gap-2 text-[11px] font-semibold text-slate-300">
+                  <span className="hover:text-blue-400 transition">Marcopolo</span> • 
+                  <span className="hover:text-blue-400 transition">Aeolina</span> • 
+                  <span className="hover:text-blue-400 transition">ion-boats</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
+
+      {/* Founder & European Heritage Trust Section */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
+        <FounderTrustBadge lang={lang} />
       </section>
 
       {/* Services Grid */}
