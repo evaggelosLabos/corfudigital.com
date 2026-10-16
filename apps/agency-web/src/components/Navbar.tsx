@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { 
   Menu, X, Hotel, Home, Anchor, Cpu, Briefcase, 
@@ -75,9 +76,17 @@ export function Navbar({ showBackToHome = false }: NavbarProps) {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-white/95 border-b border-slate-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
         {/* Logo */}
-        <Link href={`/${lang}`} className="flex flex-col group">
-          <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 group-hover:text-blue-600 transition">
-            CORFU<span className="text-blue-600">DIGITAL</span>
+        <Link href={`/${lang}`} className="flex shrink-0 flex-col group">
+          <span className="relative block h-12 w-[244px] overflow-hidden" aria-label="Corfu Digital">
+            <Image
+              src="/corfu-digital-logo.png"
+              alt="Corfu Digital"
+              width={2056}
+              height={765}
+              priority
+              className="absolute left-0 top-[-22px] h-auto w-[244px] max-w-none"
+              sizes="244px"
+            />
           </span>
           <span className="text-[10px] text-slate-700 tracking-wider uppercase font-semibold">
             {isEl ? "Κατασκευή Ιστοσελίδων & Booking Tech" : t.nav.tagline}

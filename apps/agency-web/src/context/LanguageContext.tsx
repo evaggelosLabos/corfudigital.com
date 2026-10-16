@@ -17,9 +17,16 @@ export const LanguageProvider: React.FC<{
   children: React.ReactNode;
   initialLang?: Language;
 }> = ({ children, initialLang = "el" }) => {
-  const [lang, setLangState] = useState<Language>(initialLang);
   const pathname = usePathname();
   const router = useRouter();
+
+  const resolvedLang: Language = pathname?.startsWith("/en")
+    ? "en"
+    : pathname?.startsWith("/el")
+    ? "el"
+    : initialLang;
+
+  const [lang, setLangState] = useState<Language>(resolvedLang);
 
   // Keep state in sync with URL
   useEffect(() => {
@@ -27,8 +34,16 @@ export const LanguageProvider: React.FC<{
       setLangState("en");
     } else if (pathname?.startsWith("/el")) {
       setLangState("el");
+    } else {
+      setLangState(initialLang);
     }
-  }, [pathname]);
+  }, [pathname, initialLang]);
+
+  const activeLang: Language = pathname?.startsWith("/en")
+    ? "en"
+    : pathname?.startsWith("/el")
+    ? "el"
+    : lang;
 
   const setLang = (newLang: Language) => {
     setLangState(newLang);
@@ -47,11 +62,11 @@ export const LanguageProvider: React.FC<{
   };
 
   const toggleLang = () => {
-    setLang(lang === "en" ? "el" : "en");
+    setLang(activeLang === "en" ? "el" : "en");
   };
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, toggleLang, t: translations[lang] }}>
+    <LanguageContext.Provider value={{ lang: activeLang, setLang, toggleLang, t: translations[activeLang] }}>
       {children}
     </LanguageContext.Provider>
   );

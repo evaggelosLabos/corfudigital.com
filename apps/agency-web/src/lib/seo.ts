@@ -167,7 +167,9 @@ export function buildPageMetadata(pageKey: string, lang: Language, pathSuffix: s
   const canonicalUrl = lang === "el" ? elUrl : enUrl;
 
   return {
-    title: current.title,
+    title: {
+      absolute: current.title,
+    },
     description: current.description,
     keywords: current.keywords,
     alternates: {
