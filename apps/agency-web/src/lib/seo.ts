@@ -19,12 +19,11 @@ export interface PageSeoConfig {
 export const SEO_DATA: Record<string, PageSeoConfig> = {
   home: {
     el: {
-      title: "Κατασκευή Ιστοσελίδων Κέρκυρα | Corfu Digital - Web Engineering & Direct Booking",
-      description: "Επαγγελματική κατασκευή ιστοσελίδων στην Κέρκυρα. Μηχανές απευθείας κρατήσεων για βίλες & ξενοδοχεία (0% προμήθεια), Beds24/iCal sync, myDATA & ψηφιακός μετασχηματισμός.",
+      title: "Corfu Digital | Web Development & Booking Technology",
+      description: "Κατασκευή ψηφιακών λύσεων για τουριστικές και τοπικές επιχειρήσεις στην Κέρκυρα: ιστοσελίδες, απευθείας κρατήσεις και αυτοματισμοί.",
       keywords: [
-        "κατασκευη ιστοσελιδων κερκυρα",
-        "σχεδιασμος ιστοσελιδων κερκυρα",
-        "web design κερκυρα",
+        "web development κερκυρα",
+        "digital agency corfu",
         "ψηφιακος μετασχηματισμος κερκυρα",
         "booking engine για βιλες",
         "κατασκευη eshop κερκυρα",
@@ -153,6 +152,18 @@ export const SEO_DATA: Record<string, PageSeoConfig> = {
         "corfu web design portfolio",
         "hotel and villa booking platforms showcase"
       ]
+    }
+  },
+  websiteDevelopment: {
+    el: {
+      title: "Κατασκευή Ιστοσελίδων στην Κέρκυρα | Corfu Digital",
+      description: "Κατασκευάζουμε επαγγελματικές ιστοσελίδες στην Κέρκυρα για ξενοδοχεία, βίλες, τουριστικές επιχειρήσεις και τοπικές εταιρείες. Δείτε έργα και τη διαδικασία συνεργασίας.",
+      keywords: ["κατασκευη ιστοσελιδων κερκυρα", "κατασκευή ιστοσελίδων στην Κέρκυρα", "σχεδιασμός ιστοσελίδων κέρκυρα", "web design κερκυρα"]
+    },
+    en: {
+      title: "Website Design & Development in Corfu | Corfu Digital",
+      description: "We build professional websites in Corfu for hotels, villas, tourism businesses, and local companies. Explore our work and how we collaborate.",
+      keywords: ["website development corfu", "web design corfu", "website designer corfu greece"]
     }
   }
 };

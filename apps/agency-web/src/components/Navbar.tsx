@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { 
-  Menu, X, Hotel, Home, Anchor, Cpu, Briefcase, 
+  Menu, X, Hotel, Home, Anchor, Cpu, Briefcase, Globe,
   ArrowRight, Phone, Mail, Sparkles, MessageSquare 
 } from "lucide-react";
 import { Button } from "@repo/ui";
@@ -40,6 +40,12 @@ export function Navbar({ showBackToHome = false }: NavbarProps) {
   }, [isOpen]);
 
   const navLinks = [
+    {
+      href: `/${lang}/kataskevi-istoselidon-kerkyra`,
+      label: isEl ? "Κατασκευή Ιστοσελίδων" : "Web Development",
+      icon: <Globe className="w-4 h-4 text-blue-600" />,
+      desc: isEl ? "Ιστοσελίδες για επιχειρήσεις στην Κέρκυρα" : "Websites for businesses in Corfu",
+    },
     {
       href: `/${lang}/services/hotel-websites`,
       label: t.nav.hotels,

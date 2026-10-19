@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "services/boat-tours-transfers", priority: 0.8, changeFrequency: "weekly" as const },
     { path: "services/digital-transformation", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "case-studies", priority: 0.8, changeFrequency: "weekly" as const },
+    { path: "kataskevi-istoselidon-kerkyra", priority: 0.9, changeFrequency: "monthly" as const },
   ];
 
   const entries: MetadataRoute.Sitemap = [];

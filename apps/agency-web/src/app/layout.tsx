@@ -72,47 +72,12 @@ export default function RootLayout({
     "priceRange": "$$"
   };
 
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How does Corfu Digital eliminate 15%-25% Booking.com and Airbnb fees?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We embed a custom direct booking engine with Stripe card processing into your hotel or villa website, paired with 2-way real-time iCal/Beds24 calendar synchronization to prevent double-bookings. You only pay standard ~1.6% bank processing instead of 18%-20% middleman commissions."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Πώς βοηθάει η Corfu Digital τον ψηφιακό μετασχηματισμό των επιχειρήσεων στην Κέρκυρα;",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Κατασκευάζουμε υπερταχείες ιστοσελίδες και e-shop, αυτοματοποιούμε τη διασύνδεση με την ΑΑΔΕ myDATA για ηλεκτρονική τιμολόγηση, ενσωματώνουμε online ραντεβού και αυτοματισμούς WhatsApp CRM για μικρομεσαίες επιχειρήσεις (ΜμΕ) στην Κέρκυρα."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What technologies does Corfu Digital use for website development?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We build with Next.js 15, React 19, TypeScript, and Tailwind CSS, hosted on high-availability European edge servers, achieving sub-second (< 0.8s) load speeds and 95+ PageSpeed scores."
-        }
-      }
-    ]
-  };
-
   return (
     <html lang="el" className="scroll-smooth">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       </head>
       <body className="antialiased min-h-screen flex flex-col bg-slate-50 text-slate-900">

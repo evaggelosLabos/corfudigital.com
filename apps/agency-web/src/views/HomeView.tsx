@@ -300,6 +300,12 @@ export function HomeView() {
             </Link>
           </Card>
         </div>
+        <div className="mt-8 text-center">
+          <Link href={`/${lang}/kataskevi-istoselidon-kerkyra`} className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-5 py-3 text-sm font-bold text-blue-700 hover:bg-blue-100 transition">
+            {lang === "el" ? "Κατασκευή ιστοσελίδων στην Κέρκυρα" : "Website development in Corfu"}
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
       </section>
 
       {/* Commission Calculator */}
@@ -409,23 +415,39 @@ export function HomeView() {
         </div>
       </section>
 
-      {/* Footer with Local SEO & Schema Backlinks */}
-      <footer className="border-t border-slate-200 pt-12 max-w-6xl mx-auto px-4 sm:px-6 w-full text-xs text-slate-500">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            © {new Date().getFullYear()} Corfu Digital • {isEl ? "Κατασκευή Ιστοσελίδων Κέρκυρα & Direct Booking Engines" : "Corfu Web Design & Booking Tech"}
+      {/* Site footer with service and portfolio navigation */}
+      <footer className="mt-12 border-t border-slate-200 bg-white w-full text-sm text-slate-600">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <Link href={`/${lang}`} className="text-lg font-extrabold tracking-tight text-slate-900">CORFU<span className="text-blue-600">DIGITAL</span></Link>
+              <p className="mt-3 max-w-xs leading-relaxed">{isEl ? "Σχεδιασμός και ανάπτυξη ιστοσελίδων και ψηφιακών λύσεων για επιχειρήσεις στην Κέρκυρα." : "Website development and digital solutions for businesses in Corfu."}</p>
+            </div>
+            <div>
+              <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900">{isEl ? "Εξερευνήστε" : "Explore"}</h2>
+              <ul className="mt-4 space-y-3">
+                <li><Link className="hover:text-blue-700" href={`/${lang}`}>{isEl ? "Αρχική" : "Home"}</Link></li>
+                <li><Link className="hover:text-blue-700" href={`/${lang}/case-studies`}>{isEl ? "Η δουλειά μας" : "Our work"}</Link></li>
+                <li><a className="hover:text-blue-700" href={`/${lang}#contact`}>{isEl ? "Επικοινωνία" : "Contact"}</a></li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900">{isEl ? "Υπηρεσίες" : "Services"}</h2>
+              <ul className="mt-4 space-y-3">
+                <li><Link className="hover:text-blue-700" href={`/${lang}/kataskevi-istoselidon-kerkyra`}>{isEl ? "Κατασκευή Ιστοσελίδων" : "Website Development"}</Link></li>
+                <li><Link className="hover:text-blue-700" href={`/${lang}/services/hotel-websites`}>{t.nav.hotels}</Link></li>
+                <li><Link className="hover:text-blue-700" href={`/${lang}/services/villa-booking-engines`}>{t.nav.villas}</Link></li>
+                <li><Link className="hover:text-blue-700" href={`/${lang}/services/boat-tours-transfers`}>{t.nav.boats}</Link></li>
+                <li><Link className="hover:text-blue-700" href={`/${lang}/services/digital-transformation`}>{t.nav.digitalTransformation}</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900">{isEl ? "Μιλήστε μαζί μας" : "Get in touch"}</h2>
+              <p className="mt-4 leading-relaxed">{isEl ? "Έχετε ερώτηση ή θέλετε να συζητήσουμε την ιστοσελίδα σας;" : "Have a question or want to discuss your website?"}</p>
+              <a className="mt-3 inline-block font-semibold text-blue-700 hover:text-blue-900" href="mailto:info@corfudigital.com">info@corfudigital.com</a>
+            </div>
           </div>
-          <div className="flex items-center gap-6">
-            <Link href={`/${lang}/services/hotel-websites`} className="hover:text-slate-900">
-              {t.nav.hotels}
-            </Link>
-            <Link href={`/${lang}/services/villa-booking-engines`} className="hover:text-slate-900">
-              {t.nav.villas}
-            </Link>
-            <Link href={`/${lang}/services/digital-transformation`} className="hover:text-slate-900">
-              {t.nav.digitalTransformation}
-            </Link>
-          </div>
+          <div className="mt-10 border-t border-slate-200 pt-5 text-xs text-slate-500">© {new Date().getFullYear()} Corfu Digital · {isEl ? "Κατασκευή ιστοσελίδων στην Κέρκυρα" : "Website development in Corfu"}</div>
         </div>
       </footer>
     </div>
