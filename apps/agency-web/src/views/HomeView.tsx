@@ -10,6 +10,7 @@ import { ArrowRight, CheckCircle2, ShieldCheck, Zap, Globe, Calendar, DollarSign
 import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
 import { Navbar } from "../components/Navbar";
+import { WebsiteFaq } from "../components/WebsiteFaq";
 
 export function HomeView() {
   const { lang, t } = useLanguage();
@@ -417,6 +418,7 @@ export function HomeView() {
 
       {/* Site footer with service and portfolio navigation */}
       <footer className="mt-12 border-t border-slate-200 bg-white w-full text-sm text-slate-600">
+        <WebsiteFaq />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div>
