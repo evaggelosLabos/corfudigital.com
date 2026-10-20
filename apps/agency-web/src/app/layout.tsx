@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
   description: "Bespoke web development, zero-commission direct booking engines, Beds24 / iCal sync, and small business digital transformation in Corfu, Greece.",
   icons: {
-    icon: [{ url: "/favicon.png", type: "image/png", sizes: "192x192" }],
+    icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
   },
   authors: [{ name: "Evangelos Lampos" }],
   robots: {
