@@ -10,7 +10,10 @@ export const metadata: Metadata = {
   },
   description: "Bespoke web development, zero-commission direct booking engines, Beds24 / iCal sync, and small business digital transformation in Corfu, Greece.",
   icons: {
-    icon: [{ url: "/favicon.ico", type: "image/x-icon" }],
+    // The deployed /favicon.ico currently serves the HTML fallback. Point
+    // crawlers directly at the working, square PNG favicon instead.
+    icon: [{ url: "/favicon.png", type: "image/png", sizes: "192x192" }],
+    apple: [{ url: "/favicon.png", type: "image/png", sizes: "192x192" }],
   },
   authors: [{ name: "Evangelos Lampos" }],
   robots: {
@@ -36,6 +39,11 @@ export default function RootLayout({
     "@type": "ProfessionalService",
     "name": "Corfu Digital",
     "url": "https://corfudigital.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://corfudigital.com/corfu-digital-logo.png"
+    },
+    "image": "https://corfudigital.com/corfu-digital-logo.png",
     "description": "Full-stack software engineering, direct booking platforms, and small business digital transformation in Corfu, Greece.",
     "founder": {
       "@type": "Person",
