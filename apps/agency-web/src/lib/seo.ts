@@ -19,8 +19,8 @@ export interface PageSeoConfig {
 export const SEO_DATA: Record<string, PageSeoConfig> = {
   home: {
     el: {
-      title: "Corfu Digital | Web Development & Booking Technology",
-      description: "Κατασκευή ψηφιακών λύσεων για τουριστικές και τοπικές επιχειρήσεις στην Κέρκυρα: ιστοσελίδες, απευθείας κρατήσεις και αυτοματισμοί.",
+      title: "Web Development Κέρκυρα & Συστήματα Κρατήσεων | Corfu Digital",
+      description: "Web development στην Κέρκυρα: κατασκευή ιστοσελίδων για επιχειρήσεις, ξενοδοχεία και βίλες, συστήματα απευθείας κρατήσεων και αυτοματισμοί.",
       keywords: [
         "web development κερκυρα",
         "digital agency corfu",
