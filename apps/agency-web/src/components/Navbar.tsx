@@ -187,7 +187,7 @@ export function Navbar({ showBackToHome = false }: NavbarProps) {
               
               <div className="text-center pt-2">
                 <a
-                  href="tel:+306980000000"
+                  href="tel:+306945474102"
                   className="text-xs text-slate-700 hover:text-blue-600 inline-flex items-center gap-1.5 font-medium"
                 >
                   <Phone className="w-3.5 h-3.5 text-blue-600" />
