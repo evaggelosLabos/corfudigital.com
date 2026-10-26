@@ -10,9 +10,7 @@ export const metadata: Metadata = {
   },
   description: "Bespoke web development, zero-commission direct booking engines, Beds24 / iCal sync, and small business digital transformation in Corfu, Greece.",
   icons: {
-    // The deployed /favicon.ico currently serves the HTML fallback. Point
-    // crawlers directly at the working, square PNG favicon instead.
-    icon: [{ url: "/favicon.png", type: "image/png", sizes: "192x192" }],
+    icon: [{ url: "/favicon.ico", type: "image/x-icon", sizes: "any" }],
     apple: [{ url: "/favicon.png", type: "image/png", sizes: "192x192" }],
   },
   authors: [{ name: "Evangelos Lampos" }],
