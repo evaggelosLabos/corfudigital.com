@@ -4,13 +4,13 @@ import type { Language } from "../../../i18n/translations";
 import { WebsiteDevelopmentView } from "../../../views/WebsiteDevelopmentView";
 
 export function generateStaticParams() {
-  return [{ lang: "el" }, { lang: "en" }];
+  return [{ lang: "en" }];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const validLang: Language = lang === "en" ? "en" : "el";
-  return buildPageMetadata("websiteDevelopment", validLang, "kataskevi-istoselidon-kerkyra");
+  return buildPageMetadata("websiteDevelopment", validLang, "κατασκευή-ιστοσελίδων-κέρκυρα");
 }
 
 export default function Page() {

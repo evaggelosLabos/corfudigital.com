@@ -41,7 +41,7 @@ export function Navbar({ showBackToHome = false }: NavbarProps) {
 
   const navLinks = [
     {
-      href: `/${lang}/kataskevi-istoselidon-kerkyra`,
+      href: `/${lang}/${lang === "en" ? "website-development-corfu" : "κατασκευή-ιστοσελίδων-κέρκυρα"}`,
       label: isEl ? "Κατασκευή Ιστοσελίδων" : "Web Development",
       icon: <Globe className="w-4 h-4 text-blue-600" />,
       desc: isEl ? "Ιστοσελίδες για επιχειρήσεις στην Κέρκυρα" : "Websites for businesses in Corfu",

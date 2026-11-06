@@ -58,6 +58,12 @@ export const LanguageProvider: React.FC<{
       targetPath = `/${newLang}${pathname === "/" ? "" : pathname}`;
     }
 
+    if (decodeURI(pathname) === "/el/κατασκευή-ιστοσελίδων-κέρκυρα" && newLang === "en") {
+      targetPath = "/en/website-development-corfu";
+    } else if (pathname === "/en/website-development-corfu" && newLang === "el") {
+      targetPath = "/el/κατασκευή-ιστοσελίδων-κέρκυρα";
+    }
+
     router.push(targetPath);
   };
 

@@ -25,6 +25,9 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: "/el/kataskevi-istoselidon-kerkyra", destination: "/el/κατασκευή-ιστοσελίδων-κέρκυρα", permanent: true },
+      { source: "/en/kataskevi-istoselidon-kerkyra", destination: "/en/website-development-corfu", permanent: true },
+      { source: "/el/website-development-corfu", destination: "/el/κατασκευή-ιστοσελίδων-κέρκυρα", permanent: true },
       {
         source: "/services/:slug*",
         destination: "/el/services/:slug*",

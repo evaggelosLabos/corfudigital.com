@@ -83,43 +83,7 @@ export function WebsiteDevelopmentView() {
           <Link href={`/${lang}#contact`} className="shrink-0"><Button size="lg" variant="primary">{isEl ? "Επικοινωνία" : "Get in touch"}<ArrowRight className="w-4 h-4 ml-2" /></Button></Link>
         </div>
       </section>
-      <footer className="bg-white border-t border-slate-200">
-        <WebsiteFaq />
-        <section className="border-t border-slate-200 bg-slate-50 py-12">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-              <div>
-                <Link href={`/${lang}`} className="text-lg font-extrabold tracking-tight text-slate-900">CORFU<span className="text-blue-600">DIGITAL</span></Link>
-                <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-600">{isEl ? "Σχεδιασμός και ανάπτυξη ιστοσελίδων και ψηφιακών λύσεων για επιχειρήσεις στην Κέρκυρα." : "Website development and digital solutions for businesses in Corfu."}</p>
-              </div>
-              <div>
-                <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900">{isEl ? "Εξερευνήστε" : "Explore"}</h2>
-                <ul className="mt-4 space-y-3 text-sm text-slate-600">
-                  <li><Link className="hover:text-blue-700" href={`/${lang}`}>{isEl ? "Αρχική" : "Home"}</Link></li>
-                  <li><Link className="hover:text-blue-700" href={`/${lang}/case-studies`}>{isEl ? "Η δουλειά μας" : "Our work"}</Link></li>
-                  <li><Link className="hover:text-blue-700" href={`/${lang}#contact`}>{isEl ? "Επικοινωνία" : "Contact"}</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900">{isEl ? "Υπηρεσίες" : "Services"}</h2>
-                <ul className="mt-4 space-y-3 text-sm text-slate-600">
-                  <li><Link className="hover:text-blue-700" href={`/${lang}/kataskevi-istoselidon-kerkyra`}>{isEl ? "Κατασκευή Ιστοσελίδων" : "Website Development"}</Link></li>
-                  <li><Link className="hover:text-blue-700" href={`/${lang}/services/hotel-websites`}>{isEl ? "Ιστοσελίδες Ξενοδοχείων" : "Hotel Websites"}</Link></li>
-                  <li><Link className="hover:text-blue-700" href={`/${lang}/services/villa-booking-engines`}>{isEl ? "Συστήματα Κρατήσεων Βιλών" : "Villa Booking Systems"}</Link></li>
-                  <li><Link className="hover:text-blue-700" href={`/${lang}/services/boat-tours-transfers`}>{isEl ? "Κρατήσεις Σκαφών & Μεταφορών" : "Boat & Transfer Bookings"}</Link></li>
-                  <li><Link className="hover:text-blue-700" href={`/${lang}/services/digital-transformation`}>{isEl ? "Ψηφιακός Μετασχηματισμός" : "Digital Transformation"}</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900">{isEl ? "Μιλήστε μαζί μας" : "Get in touch"}</h2>
-                <p className="mt-4 text-sm leading-relaxed text-slate-600">{isEl ? "Έχετε ερώτηση ή θέλετε να συζητήσουμε την ιστοσελίδα σας;" : "Have a question or want to discuss your website?"}</p>
-                <a className="mt-3 inline-block text-sm font-semibold text-blue-700 hover:text-blue-900" href="mailto:info@corfudigital.com">info@corfudigital.com</a>
-              </div>
-            </div>
-            <div className="mt-10 border-t border-slate-200 pt-5 text-xs text-slate-500">© {new Date().getFullYear()} Corfu Digital · {isEl ? "Κατασκευή ιστοσελίδων στην Κέρκυρα" : "Website development in Corfu"}</div>
-          </div>
-        </section>
-      </footer>
+      <WebsiteFaq />
     </main>
   );
 }

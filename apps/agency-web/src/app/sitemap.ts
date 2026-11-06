@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://corfudigital.com";
-  const now = new Date();
 
   const routes = [
     { path: "", priority: 1.0, changeFrequency: "weekly" as const },
@@ -11,19 +10,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "services/boat-tours-transfers", priority: 0.8, changeFrequency: "weekly" as const },
     { path: "services/digital-transformation", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "case-studies", priority: 0.8, changeFrequency: "weekly" as const },
-    { path: "kataskevi-istoselidon-kerkyra", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "κατασκευή-ιστοσελίδων-κέρκυρα", priority: 0.9, changeFrequency: "monthly" as const },
   ];
 
   const entries: MetadataRoute.Sitemap = [];
 
   for (const route of routes) {
     const elPath = route.path ? `/el/${route.path}` : "/el";
-    const enPath = route.path ? `/en/${route.path}` : "/en";
+    const enRoute = route.path === "κατασκευή-ιστοσελίδων-κέρκυρα" ? "website-development-corfu" : route.path;
+    const enPath = enRoute ? `/en/${enRoute}` : "/en";
 
     // Greek Entry
     entries.push({
       url: `${baseUrl}${elPath}`,
-      lastModified: now,
       changeFrequency: route.changeFrequency,
       priority: route.priority,
       alternates: {
@@ -38,7 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // English Entry
     entries.push({
       url: `${baseUrl}${enPath}`,
-      lastModified: now,
       changeFrequency: route.changeFrequency,
       priority: route.priority,
       alternates: {

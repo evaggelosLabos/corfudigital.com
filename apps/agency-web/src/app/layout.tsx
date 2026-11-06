@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "../context/LanguageContext";
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://corfudigital.com"),
@@ -27,16 +28,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const lang = (await headers()).get("x-page-language") === "en" ? "en" : "el";
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Corfu Digital",
     "url": "https://corfudigital.com",
+    "telephone": "+306945474102",
     "logo": {
       "@type": "ImageObject",
       "url": "https://corfudigital.com/corfu-digital-logo.png"
@@ -54,11 +57,6 @@ export default function RootLayout({
       "addressLocality": "Corfu",
       "addressRegion": "Ionian Islands",
       "addressCountry": "GR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "39.6243",
-      "longitude": "19.9217"
     },
     "areaServed": [
       "Corfu",
@@ -82,7 +80,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="el" className="scroll-smooth">
+    <html lang={lang} className="scroll-smooth">
       <head>
         <script
           type="application/ld+json"

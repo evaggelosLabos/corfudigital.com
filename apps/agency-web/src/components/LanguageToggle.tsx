@@ -10,6 +10,10 @@ export const LanguageToggle = () => {
   const pathname = usePathname() || "/el";
 
   const getPathForLang = (targetLang: "el" | "en") => {
+    const decodedPath = decodeURI(pathname);
+    if (decodedPath === "/el/κατασκευή-ιστοσελίδων-κέρκυρα" || decodedPath === "/en/κατασκευή-ιστοσελίδων-κέρκυρα" || decodedPath === "/en/website-development-corfu") {
+      return targetLang === "en" ? "/en/website-development-corfu" : "/el/κατασκευή-ιστοσελίδων-κέρκυρα";
+    }
     if (pathname.startsWith("/en")) {
       return pathname.replace(/^\/en/, `/${targetLang}`);
     } else if (pathname.startsWith("/el")) {

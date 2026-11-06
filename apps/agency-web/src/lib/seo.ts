@@ -174,7 +174,8 @@ export function buildPageMetadata(pageKey: string, lang: Language, pathSuffix: s
   const pagePath = pathSuffix ? `/${pathSuffix}` : "";
   
   const elUrl = `${BASE_URL}/el${pagePath}`;
-  const enUrl = `${BASE_URL}/en${pagePath}`;
+  const enPath = pageKey === "websiteDevelopment" ? "/website-development-corfu" : pagePath;
+  const enUrl = `${BASE_URL}/en${enPath}`;
   const canonicalUrl = lang === "el" ? elUrl : enUrl;
 
   return {

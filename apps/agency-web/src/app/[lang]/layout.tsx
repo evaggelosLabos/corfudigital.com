@@ -2,6 +2,10 @@ import React from "react";
 import { Language } from "../../i18n/translations";
 import { LanguageProvider } from "../../context/LanguageContext";
 import { notFound } from "next/navigation";
+import { SiteFooter } from "../../components/SiteFooter";
+
+// The root layout reads the language supplied for each request.
+export const dynamic = "force-dynamic";
 
 export default async function LangLayout({
   children,
@@ -20,6 +24,7 @@ export default async function LangLayout({
   return (
     <LanguageProvider initialLang={validLang}>
       {children}
+      <SiteFooter />
     </LanguageProvider>
   );
 }
