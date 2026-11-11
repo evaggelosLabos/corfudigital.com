@@ -16,7 +16,7 @@ export function BusinessConveyor({ lang, isEl }: Props) {
   useEffect(() => {
     const root = section.current, panel = stage.current, frame = viewport.current, rail = track.current;
     if (!root || !panel || !frame || !rail) return;
-    const media = window.matchMedia("(min-width: 768px) and (min-height: 650px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)");
+    const media = window.matchMedia("(min-width: 320px) and (min-height: 600px) and (prefers-reduced-motion: no-preference)");
     let raf = 0;
     const update = () => {
       raf = 0;

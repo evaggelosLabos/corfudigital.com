@@ -5,14 +5,14 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
-const getDistrictTravel = (distance: number) => distance > 0 ? Math.max(distance * 4, window.innerHeight * 3) : 0;
+const getDistrictTravel = (distance: number) => distance > 0 ? (window.innerWidth < 768 ? Math.max(distance * 1.3, window.innerHeight * 1.5) : Math.max(distance * 4, window.innerHeight * 3)) : 0;
 
 export function DigitalDistrict({ lang, isEl }: { lang: string; isEl: boolean }) {
   const section = useRef<HTMLElement>(null), stage = useRef<HTMLDivElement>(null), viewport = useRef<HTMLDivElement>(null), track = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const root=section.current, panel=stage.current, frame=viewport.current, rail=track.current;
     if (!root || !panel || !frame || !rail) return;
-    const media=matchMedia("(min-width: 768px) and (min-height: 650px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)");
+    const media=matchMedia("(min-width: 320px) and (min-height: 600px) and (prefers-reduced-motion: no-preference)");
     let request=0;
     const update=()=>{ request=0; if (!media.matches) { root.classList.remove("district-pinned"); root.style.removeProperty("--district-height"); rail.style.removeProperty("transform"); return; }
       root.classList.add("district-pinned"); const distance=Math.max(0,rail.scrollWidth-frame.clientWidth), travel=getDistrictTravel(distance); root.style.setProperty("--district-height",`${panel.offsetHeight+travel}px`); const progress=travel?Math.max(0,Math.min(1,(80-root.getBoundingClientRect().top)/travel)):0; rail.style.transform=`translate3d(${-distance*progress}px,0,0)`; };

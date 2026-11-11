@@ -264,3 +264,54 @@
 .district-photo { display:block; width:100%; height:100%; object-fit:cover; }
 .district-building:hover .district-photo { transform:scale(1.06); }
 @media (prefers-reduced-motion:no-preference) { .district-photo { transition:transform .4s ease; } }
+
+/* The business side of the opening uses a photographic editorial composition. */
+.intro-business-art { position:absolute; top:32%; left:10%; width:78%; max-width:460px; aspect-ratio:1.35; }
+.intro-business-frame { position:absolute; inset:0 16% 10% 0; overflow:hidden; border:1px solid #9bb4dc; background:#b9cae7; box-shadow:14px 16px 0 #adc3e5; }
+.intro-business-frame>img,.intro-business-detail>img { width:100%; height:100%; object-fit:cover; display:block; }
+.intro-business-shade { position:absolute; inset:35% 0 0; background:linear-gradient(transparent,#071a34d9); }
+.intro-business-caption { position:absolute; left:7%; right:7%; bottom:8%; color:#fff; text-align:left; }
+.intro-business-caption span { display:block; font-size:clamp(.45rem,.7vw,.6rem); font-weight:800; letter-spacing:.18em; }
+.intro-business-caption strong { display:block; margin-top:.4rem; font-size:clamp(.85rem,1.8vw,1.5rem); font-weight:900; letter-spacing:-.03em; }
+.intro-business-detail { position:absolute; right:0; bottom:0; width:42%; height:43%; padding:5px; background:#f0f5ff; box-shadow:0 8px 24px #1b396950; }
+.intro-business-detail>img { height:100%; }
+.intro-business-detail span { position:absolute; right:10px; bottom:10px; color:white; background:#102749; padding:.25rem .4rem; font-size:.5rem; font-weight:900; letter-spacing:.1em; }
+.intro-business-badge { position:absolute; left:-5%; top:8%; display:flex; align-items:center; gap:.5rem; padding:.6rem .75rem; color:#eaf3ff; background:#102a53; box-shadow:0 8px 20px #17375b40; }
+.intro-business-badge span { color:#80b1ff; font-size:1.25rem; line-height:1; }.intro-business-badge b { font-size:clamp(.42rem,.65vw,.58rem); line-height:1.35; letter-spacing:.12em; }
+@media (max-width:767px) { .intro-business-art { left:7%; top:36%; width:88%; aspect-ratio:1.12; }.intro-business-frame { inset:0 12% 10% 0; box-shadow:7px 8px 0 #adc3e5; }.intro-business-detail { width:45%; height:38%; padding:3px; }.intro-business-badge { left:-3%; top:5%; padding:.35rem .4rem; gap:.3rem; }.intro-business-badge span { font-size:.8rem; }.intro-business-badge b { font-size:.35rem; }.intro-business-caption span { font-size:.35rem; }.intro-business-caption strong { font-size:.65rem; }.intro-business-detail span { font-size:.38rem; right:5px; bottom:5px; }.intro-panel-idea .intro-panel-title { font-size:clamp(1.25rem,6vw,2.5rem); } }
+.intro-compass-photo { position:relative; width:75%; aspect-ratio:1; overflow:hidden; border-radius:50%; border:1px solid #9fc2ff; box-shadow:0 12px 35px #02070e88,0 0 45px #397cff20; }
+.intro-compass-photo img { width:100%; height:100%; display:block; object-fit:cover; }
+.intro-compass-photo-overlay { position:absolute; inset:35% 0 0; background:linear-gradient(transparent,#07162bd9); }
+.intro-compass-photo-label { position:absolute; bottom:19%; left:10%; right:10%; color:white; display:grid; gap:.35rem; text-align:center; }
+.intro-compass-photo-label span { font-size:clamp(.42rem,.7vw,.6rem); letter-spacing:.2em; font-weight:800; }.intro-compass-photo-label b { font-size:clamp(.7rem,1.3vw,1rem); letter-spacing:.1em; }
+
+/* The street and factory follow vertical scrolling on phones too. */
+@media (max-width:767px) and (min-height:600px) and (prefers-reduced-motion:no-preference) {
+  .district-pinned .district-stage,.conveyor-pinned .conveyor-stage { height:calc(100svh - 80px); min-height:0; padding:1rem 0; justify-content:center; }
+  .district-pinned .district-heading,.conveyor-pinned .conveyor-heading { padding:0 1rem; flex:none; }
+  .district-pinned .district-heading h2,.conveyor-pinned .conveyor-heading h2 { font-size:clamp(1.65rem,7vw,2.6rem); margin:.6rem 0; }
+  .district-pinned .district-heading>span,.conveyor-pinned .conveyor-heading>span { font-size:.55rem; }
+  .district-pinned .district-viewport,.conveyor-pinned .conveyor-viewport { flex:none; margin-top:.75rem; }
+  .district-pinned .district-track,.conveyor-pinned .conveyor-track { padding-inline:1rem; }
+  .district-pinned .district-building { height:clamp(250px,42svh,350px); width:min(80vw,340px); }
+  .district-pinned .district-sun { width:42px; height:42px; }
+  .district-pinned .district-road { padding:10px 0; }
+  .district-pinned .district-skip { bottom:.3rem; }
+  .conveyor-pinned .conveyor-card { width:min(80vw,340px); height:clamp(300px,48svh,390px); min-height:0; }
+  .conveyor-pinned .conveyor-art { min-height:100px; }
+  .conveyor-pinned .conveyor-art-shape { width:75px; height:75px; }
+  .conveyor-pinned .conveyor-art-shape svg { width:48px; height:48px; }
+  .conveyor-pinned .conveyor-art-orbit { width:100px; height:100px; }
+  .conveyor-pinned .conveyor-card-content { padding:.8rem 1rem; }
+  .conveyor-pinned .conveyor-card-content h3 { font-size:1.25rem; padding-right:2rem; }
+  .conveyor-pinned .conveyor-card-content p { font-size:.78rem; line-height:1.35; margin-top:.4rem; }
+  .conveyor-pinned .conveyor-card-link { padding-top:.5rem; }
+  .conveyor-pinned .factory-scenery { display:block; }
+  .conveyor-pinned .factory-machine { top:calc(50% - 125px); width:100px; }
+  .conveyor-pinned .factory-machine-head { height:42px; gap:7px; }
+  .conveyor-pinned .factory-machine-head i { flex-basis:7px; height:7px; }
+  .conveyor-pinned .factory-machine-press { width:85px; }
+  .conveyor-pinned .factory-status { padding:.5rem 1rem 0; }
+  .conveyor-pinned .factory-status a { display:inline-block; }
+  .conveyor-pinned .factory-package-icon { width:80px; height:80px; }
+}
