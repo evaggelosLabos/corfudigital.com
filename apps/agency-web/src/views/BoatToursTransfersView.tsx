@@ -5,7 +5,7 @@ import { Badge, Button } from "@repo/ui";
 import { ArrowLeft, Anchor, Compass, DollarSign } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
-import { LanguageToggle } from "../components/LanguageToggle";
+import { Navbar } from "../components/Navbar";
 
 export function BoatToursTransfersView() {
   const { lang } = useLanguage();
@@ -13,19 +13,7 @@ export function BoatToursTransfersView() {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
-      <header className="bg-white border-b border-slate-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-          <Link href={`/${lang}`} className="inline-flex items-center text-sm font-semibold text-slate-700 hover:text-blue-600">
-            <ArrowLeft className="w-4 h-4 mr-2" /> {isEl ? "Επιστροφή στην Αρχική" : "Back to Home"}
-          </Link>
-          <div className="flex items-center gap-4">
-            <LanguageToggle />
-            <Link href={`/${lang}`} className="text-sm font-bold text-slate-900 hover:opacity-90 transition">
-              CORFU<span className="text-blue-600">DIGITAL</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -89,6 +77,7 @@ export function BoatToursTransfersView() {
           </div>
         </div>
 
+        <Link href={`/${lang}/guides/boat-rental-website-corfu`} className="inline-block mt-8 text-blue-700 font-semibold hover:underline">{isEl ? "Οδηγός για ιστοσελίδες ενοικίασης σκαφών →" : "Guide to boat rental websites →"}</Link>
         {/* Real Example */}
         <div className="mt-16 bg-blue-50 border border-blue-200 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>

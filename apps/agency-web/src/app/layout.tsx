@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "../context/LanguageContext";
 import { headers } from "next/headers";
+import { CustomCursor } from "../components/CustomCursor";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://corfudigital.com"),
@@ -88,6 +89,7 @@ export default async function RootLayout({
         />
       </head>
       <body className="antialiased min-h-screen flex flex-col bg-slate-50 text-slate-900">
+        <CustomCursor />
         <LanguageProvider>
           {children}
         </LanguageProvider>

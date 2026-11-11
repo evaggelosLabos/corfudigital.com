@@ -5,7 +5,7 @@ import { Badge, Button, ProjectMockupCard } from "@repo/ui";
 import { ArrowLeft, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
-import { LanguageToggle } from "../components/LanguageToggle";
+import { Navbar } from "../components/Navbar";
 
 export function CaseStudiesView() {
   const { lang } = useLanguage();
@@ -19,7 +19,7 @@ export function CaseStudiesView() {
       description: isEl 
         ? "Σύγχρονη, υψηλής απόδοσης web εμπειρία για το Marcopolo Hotel στην Κέρκυρα. Βελτιστοποιημένη για εντυπωσιακή οπτική παρουσίαση, ταχύτατη πλοήγηση από κινητά και απευθείας κρατήσεις δωματίων."
         : "Modern, high-performance responsive web experience for Marcopolo Hotel in Corfu. Optimized for visual storytelling, fast mobile discovery, and direct guest reservations.",
-      metrics: isEl ? "< 0.8δ Ταχύτητα Mobile" : "< 0.8s Mobile Speed",
+      metrics: isEl ? "Ιστοσελίδα ξενοδοχείου" : "Hotel website",
       link: "https://marcopolocorfu.com",
       imageUrl: "https://marcopolocorfu.com/hotel/photo_079.jpg",
       imageAlt: "Marcopolo Hotel Corfu Real Photo",
@@ -64,19 +64,7 @@ export function CaseStudiesView() {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
-      <header className="bg-white border-b border-slate-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-          <Link href={`/${lang}`} className="inline-flex items-center text-sm font-semibold text-slate-700 hover:text-blue-600">
-            <ArrowLeft className="w-4 h-4 mr-2" /> {isEl ? "Επιστροφή στην Αρχική" : "Back to Home"}
-          </Link>
-          <div className="flex items-center gap-4">
-            <LanguageToggle />
-            <Link href={`/${lang}`} className="text-sm font-bold text-slate-900 hover:opacity-90 transition">
-              CORFU<span className="text-blue-600">DIGITAL</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -88,7 +76,7 @@ export function CaseStudiesView() {
           </h1>
           <p className="text-slate-600 text-lg sm:text-xl mt-6 max-w-2xl mx-auto leading-relaxed">
             {isEl
-              ? "Δείτε πώς βοηθήσαμε ξενοδοχεία, ιδιοκτήτες πολυτελών κατοικιών, στόλους σκαφών και εταιρείες μεταφορών στην Κέρκυρα να αποκτήσουν τεχνολογικό πλεονέκτημα και να αυξήσουν τα απευθείας έσοδά τους."
+              ? "Δείτε ιστοσελίδες και συστήματα για ξενοδοχεία, βίλες, σκάφη και μεταφορές στην Κέρκυρα."
               : "See how we empower boutique hotels, luxury villa hosts, boat charter fleets, and transfer operators across Corfu with high-speed web tech and zero-commission booking engines."}
           </p>
         </div>
@@ -100,6 +88,12 @@ export function CaseStudiesView() {
             <ProjectMockupCard key={idx} {...project} />
           ))}
         </div>
+
+        <section className="mt-16 rounded-2xl bg-white border border-slate-200 p-7 sm:p-10">
+          <h2 className="text-2xl font-bold">{isEl ? "Παράδειγμα έργου: ion-boats" : "Project example: ion-boats"}</h2>
+          <p className="mt-4 text-slate-700 leading-relaxed">{isEl ? "Η ion-boats παρουσιάζει ιδιωτικές εκδρομές με σκάφος στην Κέρκυρα. Το έργο περιλαμβάνει online παρουσίαση εκδρομών και επιλογή πακέτων, ώστε ο επισκέπτης να μπορεί να ανακαλύψει τις διαθέσιμες επιλογές και να προχωρήσει σε κράτηση." : "ion-boats presents private boat trips in Corfu. The project includes an online presentation of excursions and package selection, helping visitors explore their options and make a booking."}</p>
+          <a href="https://ion-boats.com" className="inline-block mt-4 font-semibold text-blue-700 hover:underline">{isEl ? "Δείτε την ιστοσελίδα ion-boats →" : "Visit ion-boats →"}</a>
+        </section>
 
         {/* Bottom CTA */}
         <div className="mt-20 bg-slate-900 rounded-3xl p-8 sm:p-12 text-white text-center flex flex-col items-center">

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { guides } from "../lib/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://corfudigital.com";
@@ -49,5 +50,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
+  for (const lang of ["el", "en"]) {
+    entries.push({ url: `${baseUrl}/${lang}/blog` });
+    for (const guide of guides) entries.push({ url: `${baseUrl}/${lang}/guides/${guide.slug}` });
+  }
   return entries;
 }

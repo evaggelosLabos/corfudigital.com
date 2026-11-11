@@ -51,7 +51,7 @@ export const SEO_DATA: Record<string, PageSeoConfig> = {
   hotelWebsites: {
     el: {
       title: "Κατασκευή Ιστοσελίδων Ξενοδοχείων Κέρκυρα | Corfu Digital",
-      description: "Custom ιστοσελίδες υψηλής απόδοσης για boutique ξενοδοχεία και resorts στην Κέρκυρα. Ταχύτητα φόρτωσης < 0.8s και απευθείας κρατήσεις χωρίς προμήθειες.",
+      description: "Custom ιστοσελίδες υψηλής απόδοσης για boutique ξενοδοχεία και resorts στην Κέρκυρα. Σχεδιασμός για κινητά και δυνατότητες απευθείας κρατήσεων.",
       keywords: [
         "κατασκευη ιστοσελιδων ξενοδοχειων κερκυρα",
         "hotel web development corfu",
@@ -61,7 +61,7 @@ export const SEO_DATA: Record<string, PageSeoConfig> = {
     },
     en: {
       title: "Corfu Hotel Web Engineering & Direct Bookings | Corfu Digital",
-      description: "High-performance web applications for boutique hotels & luxury resorts in Corfu, Greece. Sub-second speed and direct booking channels.",
+      description: "High-performance web applications for boutique hotels & luxury resorts in Corfu, Greece. Mobile-friendly design and direct booking options.",
       keywords: [
         "corfu hotel web engineering",
         "boutique hotel web design corfu",
@@ -73,7 +73,7 @@ export const SEO_DATA: Record<string, PageSeoConfig> = {
   villaBookingEngines: {
     el: {
       title: "Μηχανές Κρατήσεων για Βίλες Κέρκυρα (0% Προμήθεια) | Corfu Digital",
-      description: "Απευθείας κρατήσεις για πολυτελείς βίλες στην Κέρκυρα. Πληρωμές με κάρτα Stripe, αμφίδρομος συγχρονισμός Beds24 & iCal και εκμηδενισμός προμηθειών Booking/Airbnb.",
+      description: "Απευθείας κρατήσεις για πολυτελείς βίλες στην Κέρκυρα. Πληρωμές με κάρτα Stripe, δυνατότητες συγχρονισμού Beds24 & iCal και απευθείας κρατήσεις.",
       keywords: [
         "booking engine για βιλες κερκυρα",
         "συστημα κρατησεων βιλας",
@@ -83,7 +83,7 @@ export const SEO_DATA: Record<string, PageSeoConfig> = {
     },
     en: {
       title: "Direct Villa Booking Engines & Beds24 Sync Corfu | Corfu Digital",
-      description: "Capture direct guest reservations with instant Stripe payments and 2-way real-time calendar synchronization (Beds24 & iCal) to eliminate OTA fees.",
+      description: "Capture direct guest reservations with instant Stripe payments and calendar synchronization options (Beds24 & iCal) and direct reservations.",
       keywords: [
         "villa booking engines corfu",
         "villa direct booking system",

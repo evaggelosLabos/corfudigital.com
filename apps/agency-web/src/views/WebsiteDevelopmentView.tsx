@@ -61,6 +61,17 @@ export function WebsiteDevelopmentView() {
         </div>
       </section>
 
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+        <h2 className="text-3xl font-bold">{isEl ? "Τι περιλαμβάνει μια ιστοσελίδα;" : "What can your website include?"}</h2>
+        <div className="mt-6 grid gap-5 md:grid-cols-3 text-slate-700 leading-relaxed">
+          <p>{isEl ? "Η δομή και οι σελίδες σχεδιάζονται γύρω από τις υπηρεσίες σας. Μπορούν να περιλαμβάνουν παρουσίαση έργων, φόρμα επικοινωνίας και περισσότερες από μία γλώσσες, ανάλογα με τις ανάγκες σας." : "Your site can include service pages, a portfolio, contact forms and multiple languages, depending on your needs."}</p>
+          <p>{isEl ? "Για καταλύματα, σκάφη ή μεταφορές, συζητάμε αν χρειάζεστε απλά αιτήματα ή online κρατήσεις, πληρωμές και διασύνδεση με υπάρχοντα εργαλεία." : "For accommodation, boats or transfers, we discuss whether enquiries, online bookings, payments or existing system integrations are appropriate."}</p>
+          <p>{isEl ? "Το κόστος εξαρτάται από το περιεχόμενο, τις γλώσσες και τις λειτουργίες. Πριν δώσουμε προσφορά συζητάμε τις ανάγκες, τα έξοδα φιλοξενίας και την υποστήριξη μετά τη δημοσίευση." : "The price depends on content, languages and features. Before providing a quote, we discuss your needs, hosting costs and support after launch."}</p>
+        </div>
+        <p className="mt-6 text-slate-700">{isEl ? "Για να ξεκινήσουμε, βοηθά να έχετε μια περιγραφή της επιχείρησης, των υπηρεσιών σας και του υλικού που διαθέτετε, όπως φωτογραφίες και λογότυπο. Θα συζητήσουμε μαζί τι άλλο χρειάζεται." : "To get started, bring a description of your business, your services and any available photos or logo. We will discuss what else is needed."}</p>
+        <Link className="inline-block mt-6 font-semibold text-blue-700 hover:underline" href={`/${lang}/guides/website-cost-corfu`}>{isEl ? "Διαβάστε τον οδηγό για το κόστος ιστοσελίδας στην Κέρκυρα →" : "Read our guide to website costs in Corfu →"}</Link>
+      </section>
+
       <section className="bg-slate-900 text-white py-16 sm:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-8">

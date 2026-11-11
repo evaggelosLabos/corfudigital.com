@@ -18,7 +18,7 @@ export function SiteFooter() {
               <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900">{isEl ? "Εξερευνήστε" : "Explore"}</h2>
               <ul className="mt-4 space-y-3">
                 <li><Link className="hover:text-blue-700" href={`/${lang}`}>{isEl ? "Αρχική" : "Home"}</Link></li>
-                <li><Link className="hover:text-blue-700" href={`/${lang}/case-studies`}>{isEl ? "Η δουλειά μας" : "Our work"}</Link></li>
+                <li><Link className="hover:text-blue-700" href={`/${lang}/blog`}>Blog</Link></li>
                 <li><a className="hover:text-blue-700" href={`/${lang}#contact`}>{isEl ? "Επικοινωνία" : "Contact"}</a></li>
               </ul>
             </div>

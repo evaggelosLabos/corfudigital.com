@@ -71,36 +71,36 @@ export function Navbar({ showBackToHome = false }: NavbarProps) {
       desc: isEl ? "AI Concierge & Business Automation" : "AI integrations & automation",
     },
     {
-      href: `/${lang}/case-studies`,
-      label: t.nav.caseStudies,
-      icon: <Briefcase className="w-4 h-4 text-amber-600" />,
-      desc: isEl ? "Marcopolo, Aeolina, ion-boats" : "Real Corfu production projects",
+      href: `/${lang}/blog`,
+      label: "Blog",
+      icon: <MessageSquare className="w-4 h-4 text-blue-600" />,
+      desc: isEl ? "Άρθρα και πρακτικοί οδηγοί" : "Articles and practical guides",
     },
   ];
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-white/95 border-b border-slate-200">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+    <header className="sticky top-0 z-50 bg-white/95 border-b border-slate-200">
+      <div className="max-w-6xl 2xl:max-w-[90rem] mx-auto px-3 sm:px-6 h-20 flex items-center justify-between gap-2">
         {/* Logo */}
-        <Link href={`/${lang}`} className="flex shrink-0 flex-col group">
-          <span className="relative block h-12 w-[244px] overflow-hidden" aria-label="Corfu Digital">
+        <Link href={`/${lang}`} className="flex min-w-0 flex-col group">
+          <span className="relative block h-10 w-[150px] min-[380px]:w-[170px] sm:h-12 sm:w-[244px] overflow-hidden" aria-label="Corfu Digital">
             <Image
               src="/corfu-digital-logo.png"
               alt="Corfu Digital"
               width={2056}
               height={765}
               priority
-              className="absolute left-0 top-[-22px] h-auto w-[244px] max-w-none"
+              className="absolute left-0 top-[-13px] sm:top-[-22px] h-auto w-[150px] min-[380px]:w-[170px] sm:w-[244px] max-w-none"
               sizes="244px"
             />
           </span>
-          <span className="text-[10px] text-slate-700 tracking-wider uppercase font-semibold">
+          <span className="hidden sm:block text-[10px] text-slate-700 tracking-wider uppercase font-semibold">
             {isEl ? "Κατασκευή Ιστοσελίδων & Booking Tech" : t.nav.tagline}
           </span>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-700">
+        <nav className="hidden 2xl:flex items-center gap-4 text-sm font-semibold text-slate-700">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -115,7 +115,7 @@ export function Navbar({ showBackToHome = false }: NavbarProps) {
         </nav>
 
         {/* Right Desktop Controls & Mobile Hamburger Trigger */}
-        <div className="flex items-center gap-2 sm:gap-4">
+        <div className="flex shrink-0 items-center gap-1 sm:gap-4">
           <LanguageToggle />
 
           <a href={`/${lang}#contact`} className="hidden sm:inline-block">
@@ -128,8 +128,9 @@ export function Navbar({ showBackToHome = false }: NavbarProps) {
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-xl text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-            aria-label={isOpen ? "Κλείσιμο μενού" : "Άνοιγμα μενού"}
+            className="2xl:hidden p-2 rounded-xl text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+            aria-label={isOpen ? (isEl ? "Κλείσιμο μενού" : "Close menu") : (isEl ? "Άνοιγμα μενού" : "Open menu")}
+            aria-controls="mobile-navigation"
             aria-expanded={isOpen}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -139,8 +140,8 @@ export function Navbar({ showBackToHome = false }: NavbarProps) {
 
       {/* Mobile Drawer / Slide-Down Menu */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-20 bottom-0 bg-slate-950/40 backdrop-blur-sm z-40 animate-fade-in">
-          <div className="bg-white border-b border-slate-200 shadow-2xl max-h-[calc(100vh-5rem)] overflow-y-auto p-4 sm:p-6 space-y-6">
+        <div id="mobile-navigation" className="2xl:hidden fixed inset-x-0 top-20 bottom-0 bg-slate-950/40 z-40 animate-fade-in" onClick={() => setIsOpen(false)}>
+          <div className="bg-white border-b border-slate-200 shadow-2xl max-h-[calc(100dvh-5rem)] overflow-y-auto p-4 sm:p-6 space-y-6" onClick={(event) => event.stopPropagation()}>
             {/* Navigation links with icons */}
             <div className="space-y-2">
               <div className="text-[11px] font-bold uppercase tracking-wider text-slate-700 px-3 pb-1">

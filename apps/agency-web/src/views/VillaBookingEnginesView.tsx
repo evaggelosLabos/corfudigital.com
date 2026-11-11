@@ -5,7 +5,7 @@ import { Badge, Button } from "@repo/ui";
 import { ArrowLeft, DollarSign, Calendar, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "../context/LanguageContext";
-import { LanguageToggle } from "../components/LanguageToggle";
+import { Navbar } from "../components/Navbar";
 
 export function VillaBookingEnginesView() {
   const { lang } = useLanguage();
@@ -13,19 +13,7 @@ export function VillaBookingEnginesView() {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
-      <header className="bg-white border-b border-slate-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-          <Link href={`/${lang}`} className="inline-flex items-center text-sm font-semibold text-slate-700 hover:text-blue-600">
-            <ArrowLeft className="w-4 h-4 mr-2" /> {isEl ? "Επιστροφή στην Αρχική" : "Back to Home"}
-          </Link>
-          <div className="flex items-center gap-4">
-            <LanguageToggle />
-            <Link href={`/${lang}`} className="text-sm font-bold text-slate-900 hover:opacity-90 transition">
-              CORFU<span className="text-blue-600">DIGITAL</span>
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -37,8 +25,8 @@ export function VillaBookingEnginesView() {
           </h1>
           <p className="text-slate-600 text-lg sm:text-xl mt-6 max-w-2xl mx-auto leading-relaxed">
             {isEl
-              ? "Απευθείας πληρωμές με κάρτα (Stripe), αμφίδρομος συγχρονισμός ημερολογίων (Beds24 & iCal) σε πραγματικό χρόνο και μηδενικός κίνδυνος διπλοκρατήσεων για πολυτελείς βίλες στην Κέρκυρα."
-              : "Capture direct guest reservations with instant Stripe payments and 2-way real-time calendar synchronization (Beds24 & iCal) to prevent double-bookings."}
+              ? "Απευθείας κρατήσεις και πληρωμές με κάρτα, με δυνατότητες συγχρονισμού διαθεσιμότητας μέσω Beds24 ή iCal, ανάλογα με τα συστήματά σας."
+              : "Accept direct reservations and card payments, with calendar synchronization options through Beds24 or iCal depending on your systems."}
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <Link href={`/${lang}#contact`}>
@@ -59,8 +47,8 @@ export function VillaBookingEnginesView() {
             </h3>
             <p className="text-slate-600 text-sm leading-relaxed">
               {isEl
-                ? "Κρατήστε το 100% των εσόδων σας πληρώνοντας μόνο τη στάνταρ τραπεζική εκκαθάριση (~1.6%) αντί για 18%–20% στις πλατφόρμες."
-                : "Keep 100% of your villa income by paying standard ~1.6% bank fees instead of 18%-20% middleman fees on every booking."}
+                ? "Οι απευθείας κρατήσεις δεν έχουν προμήθεια πλατφόρμας κρατήσεων, αλλά μπορεί να υπάρχουν χρεώσεις πληρωμών, λογισμικού και προώθησης."
+                : "Direct bookings avoid OTA commission, but payment processing, software and marketing may still have costs."}
             </p>
           </div>
 
@@ -71,8 +59,8 @@ export function VillaBookingEnginesView() {
             </h3>
             <p className="text-slate-600 text-sm leading-relaxed">
               {isEl
-                ? "Όταν μια ημερομηνία κλειστεί στην ιστοσελίδα σας, κλειδώνει αυτόματα σε Airbnb, Booking.com και VRBO σε δευτερόλεπτα."
-                : "Dates booked on your direct website instantly lock on Airbnb, Booking.com, and VRBO to make double-bookings impossible."}
+                ? "Ο συγχρονισμός διαθεσιμότητας βοηθά στη διαχείριση πολλών καναλιών. Το iCal μπορεί να έχει καθυστερήσεις, ανάλογα με τα συνδεδεμένα συστήματα, και δεν εξαλείφει τον κίνδυνο διπλοκράτησης."
+                : "Calendar synchronization helps manage availability across channels. iCal updates can be delayed depending on the connected systems and cannot eliminate double-booking risk."}
             </p>
           </div>
 
@@ -88,6 +76,8 @@ export function VillaBookingEnginesView() {
             </p>
           </div>
         </div>
+
+        <Link href={`/${lang}/guides/direct-bookings-villas`} className="inline-block mt-8 text-blue-700 font-semibold hover:underline">{isEl ? "Οδηγός για απευθείας κρατήσεις βίλας →" : "Guide to direct villa bookings →"}</Link>
 
         {/* Real Example */}
         <div className="mt-16 bg-blue-50 border border-blue-200 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">

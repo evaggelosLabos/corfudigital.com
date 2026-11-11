@@ -60,7 +60,7 @@ export const FounderTrustBadge: React.FC<FounderTrustBadgeProps> = ({ lang = "en
             href="https://www.eit.europa.eu/news-events/news/eit-digital-supports-next-generation-start-ups-east-balkan-region"
             target="_blank"
             rel="noreferrer"
-            className="group bg-slate-50 hover:bg-blue-50/60 p-3 sm:p-4 rounded-2xl border border-slate-200 hover:border-blue-300 transition-all duration-200 flex flex-col justify-between shadow-2xs hover:shadow-xs min-w-[90px] sm:min-w-[110px]"
+            className="group bg-slate-50 hover:bg-blue-50/60 p-3 sm:p-4 rounded-2xl border border-slate-200 hover:border-blue-300 transition-all duration-200 flex flex-col justify-between shadow-2xs hover:shadow-xs min-w-0"
           >
             <div>
               <div className="w-8 h-8 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-black text-xs mb-2.5 group-hover:scale-105 transition">
@@ -79,7 +79,7 @@ export const FounderTrustBadge: React.FC<FounderTrustBadgeProps> = ({ lang = "en
           </a>
 
           {/* MSc AI & CV */}
-          <div className="bg-slate-50 p-3 sm:p-4 rounded-2xl border border-slate-200 flex flex-col justify-between shadow-2xs min-w-[90px] sm:min-w-[110px]">
+          <div className="bg-slate-50 p-3 sm:p-4 rounded-2xl border border-slate-200 flex flex-col justify-between shadow-2xs min-w-0">
             <div>
               <div className="w-8 h-8 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-black text-xs mb-2.5">
                 <Cpu className="w-4 h-4" />
@@ -97,7 +97,7 @@ export const FounderTrustBadge: React.FC<FounderTrustBadgeProps> = ({ lang = "en
           </div>
 
           {/* 5+ Production Apps */}
-          <div className="bg-slate-50 p-3 sm:p-4 rounded-2xl border border-slate-200 flex flex-col justify-between shadow-2xs min-w-[90px] sm:min-w-[110px]">
+          <div className="bg-slate-50 p-3 sm:p-4 rounded-2xl border border-slate-200 flex flex-col justify-between shadow-2xs min-w-0">
             <div>
               <div className="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-black text-xs mb-2.5">
                 <Layers className="w-4 h-4" />
