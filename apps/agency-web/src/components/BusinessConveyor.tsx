@@ -37,22 +37,35 @@ export function BusinessConveyor({ lang, isEl }: Props) {
       // Finish with the last card still in view, just past the machine.
       const lastCardStop = lastCard ? lastCard.offsetLeft + lastCard.offsetWidth / 2 - frame.clientWidth * 0.34 : 0;
       distance.current = Math.max(0, Math.min(fullDistance, lastCardStop));
-      const travel = distance.current * 1.35;
+      const isMobile = window.innerWidth < 768;
+      const travel = isMobile ? Math.max(1, cards.length) * window.innerHeight * 0.9 : distance.current * 1.35;
       root.style.setProperty("--conveyor-height", `${panel.offsetHeight + travel}px`);
       const progress = travel ? Math.max(0, Math.min(1, (80 - root.getBoundingClientRect().top) / travel)) : 0;
-      const moved = distance.current * progress;
+      let moved = distance.current * progress;
+      let mobileIndex = 0;
+      let mobilePhase = 0;
+      if (isMobile && cards.length) {
+        const position = progress * cards.length;
+        mobileIndex = Math.min(cards.length - 1, Math.floor(position));
+        mobilePhase = Math.min(1, position - mobileIndex);
+        const nextIndex = Math.min(cards.length - 1, mobileIndex + 1);
+        const phase = Math.max(0, Math.min(1, (mobilePhase - 0.65) / 0.35));
+        const eased = phase * phase * (3 - 2 * phase);
+        const center = (card: HTMLElement) => Math.max(0, Math.min(fullDistance, card.offsetLeft + card.offsetWidth / 2 - frame.clientWidth / 2));
+        moved = center(cards[mobileIndex]) + (center(cards[nextIndex]) - center(cards[mobileIndex])) * eased;
+      }
       rail.style.transform = `translate3d(${-moved}px, 0, 0)`;
       const station = frame.clientWidth * 0.42;
       let processed = 0;
       let nearest = Infinity;
-      rail.querySelectorAll<HTMLElement>(".conveyor-card").forEach(card => {
+      cards.forEach((card, index) => {
         const position = card.offsetLeft + card.offsetWidth / 2 - moved;
-        const complete = position < station;
+        const complete = isMobile ? (index < mobileIndex || (index === mobileIndex && mobilePhase >= 0.38)) : position < station;
         card.classList.toggle("is-processed", complete);
         if (complete) processed++;
         nearest = Math.min(nearest, Math.abs(position - station));
       });
-      panel.style.setProperty("--press-depth", String(Math.max(0, 1 - nearest / 85)));
+      panel.style.setProperty("--press-depth", String(isMobile ? Math.max(0, 1 - Math.abs(mobilePhase - 0.38) / 0.2) : Math.max(0, 1 - nearest / 85)));
       if (counter.current) counter.current.textContent = String(processed).padStart(2, "0");
     };
     const schedule = () => { if (!raf) raf = requestAnimationFrame(update); };
@@ -73,6 +86,12 @@ export function BusinessConveyor({ lang, isEl }: Props) {
   const onCardFocus = (element: HTMLElement) => {
     const root = section.current, frame = viewport.current, rail = track.current;
     if (!root || !frame || !rail || !root.classList.contains("conveyor-pinned") || !distance.current) return;
+    if (window.innerWidth < 768) {
+      const cards = Array.from(rail.querySelectorAll<HTMLElement>(".conveyor-card"));
+      const index = cards.indexOf(element);
+      if (index >= 0) window.scrollTo({ top: window.scrollY + root.getBoundingClientRect().top - 80 + index * window.innerHeight * 0.9, behavior: "instant" });
+      return;
+    }
     const cardLeft = element.offsetLeft;
     const current = Math.max(0, Math.min(distance.current, (80 - root.getBoundingClientRect().top) / 1.35));
     const next = cardLeft < current ? cardLeft : cardLeft + element.offsetWidth > current + frame.clientWidth ? cardLeft + element.offsetWidth - frame.clientWidth : current;

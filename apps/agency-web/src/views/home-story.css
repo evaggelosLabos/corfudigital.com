@@ -337,3 +337,37 @@
 .factory-control i { display:block; width:85%; height:3px; margin-top:8px; background:#31537f; }.factory-control i:nth-of-type(2) { width:60%; background:#407fea; }.factory-control i:nth-of-type(3) { width:72%; }
 @media (max-width:767px) { .factory-control { top:42%; width:70px; height:90px; padding:.4rem; opacity:.7; }.factory-control span { font-size:.3rem; }.factory-control b { font-size:1.3rem; margin:.35rem 0; }.factory-control i { margin-top:5px; height:2px; } }
 @media (min-width:768px) { .conveyor-pinned .factory-machine { top:32%; } }
+
+/* Keep project details alongside the choices; expand them in place on phones. */
+.project-select-detail { display:block; padding:0; }
+.project-detail-inner { position:sticky; top:96px; display:flex; flex-direction:column; align-items:flex-start; padding:clamp(2.5rem,6vw,6rem) max(5vw,calc((100vw - 1380px)/2)); }
+.project-detail-inner h3,.project-mobile-detail h3 { margin-top:1.25rem; font-size:clamp(2rem,3.6vw,4rem); font-weight:900; line-height:1.05; letter-spacing:-.05em; }
+.project-detail-inner>p,.project-mobile-detail>p { margin-top:1rem; color:#b8cce7; line-height:1.6; }
+.project-detail-inner .project-detail-art { min-height:150px; margin:1.5rem 0; }
+.project-mobile-detail { display:none; }
+.project-mobile-detail[hidden] { display:none; }
+@media (min-width:768px) and (max-height:800px) { .project-detail-inner { padding-top:2rem; padding-bottom:2rem; }.project-detail-inner h3 { font-size:clamp(1.8rem,3vw,3rem); }.project-detail-inner .project-detail-art { min-height:110px; margin:1rem 0; }.project-detail-inner .project-art-window { transform:scale(.75); } }
+@media (max-width:767px) { .project-select-detail { display:none; }.project-mobile-detail:not([hidden]) { display:flex; flex-direction:column; align-items:flex-start; padding:1.4rem; background:#0c1830; color:#f1f6ff; scroll-margin-block:95px 1rem; }.project-mobile-detail h3 { font-size:1.7rem; }.project-mobile-detail .project-detail-art { width:100%; min-height:110px; margin:1rem 0; }.project-mobile-detail .project-art-window { transform:scale(.7); }.project-mobile-detail .story-button { margin-top:.5rem; }.project-options button { min-height:3.75rem; }.project-select-list { padding-bottom:4rem; } }
+/* On phones, one complete service card is framed at a time. */
+@media (max-width:767px) and (min-height:600px) and (prefers-reduced-motion:no-preference) {
+  .conveyor-pinned .conveyor-card { width:min(86vw,340px); }
+  .conveyor-pinned .conveyor-card-content h3 { padding-right:0; }
+  .conveyor-pinned .factory-stamp { display:none; }
+  .conveyor-pinned .factory-machine { left:auto; right:.5rem; top:1rem; width:65px; opacity:.7; }
+  .conveyor-pinned .factory-machine-head { height:30px; }
+  .conveyor-pinned .factory-machine-head::before,.conveyor-pinned .factory-machine-head::after { display:none; }
+  .conveyor-pinned .factory-machine-shaft { height:10px; width:12px; }
+  .conveyor-pinned .factory-machine-press { width:55px; height:5px; }
+}
+/* Keep the illuminated press visible above the card artwork on phones. */
+@media (max-width:767px) and (min-height:600px) and (prefers-reduced-motion:no-preference) {
+  .conveyor-pinned .factory-machine { left:50%; right:auto; top:calc(50% - 150px); width:110px; opacity:1; }
+  .conveyor-pinned .factory-machine-head { height:48px; gap:8px; }
+  .conveyor-pinned .factory-machine-head::before,.conveyor-pinned .factory-machine-head::after { display:block; width:7px; height:7px; top:7px; }
+  .conveyor-pinned .factory-machine-shaft { width:18px; height:calc(18px + 12px * var(--press-depth, 0)); }
+  .conveyor-pinned .factory-machine-press { width:96px; height:8px; }
+}
+@media (max-width:767px) and (min-height:600px) and (max-height:700px) and (prefers-reduced-motion:no-preference) { .conveyor-pinned .factory-machine { top:29%; width:90px; }.conveyor-pinned .factory-machine-head { height:38px; }.conveyor-pinned .factory-machine-press { width:78px; } }
+@media (max-width:767px) and (min-height:600px) and (prefers-reduced-motion:no-preference) {
+  .conveyor-pinned .factory-stamp { display:block; top:3.5rem; right:1rem; }
+}
