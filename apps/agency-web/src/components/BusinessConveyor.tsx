@@ -31,7 +31,12 @@ export function BusinessConveyor({ lang, isEl }: Props) {
         return;
       }
       root.classList.add("conveyor-pinned");
-      distance.current = Math.max(0, rail.scrollWidth - frame.clientWidth);
+      const cards = rail.querySelectorAll<HTMLElement>(".conveyor-card");
+      const lastCard = cards.item(cards.length - 1);
+      const fullDistance = Math.max(0, rail.scrollWidth - frame.clientWidth);
+      // Finish with the last card still in view, just past the machine.
+      const lastCardStop = lastCard ? lastCard.offsetLeft + lastCard.offsetWidth / 2 - frame.clientWidth * 0.34 : 0;
+      distance.current = Math.max(0, Math.min(fullDistance, lastCardStop));
       const travel = distance.current * 1.35;
       root.style.setProperty("--conveyor-height", `${panel.offsetHeight + travel}px`);
       const progress = travel ? Math.max(0, Math.min(1, (80 - root.getBoundingClientRect().top) / travel)) : 0;
@@ -84,7 +89,7 @@ export function BusinessConveyor({ lang, isEl }: Props) {
     { icon: UtensilsCrossed, label: isEl ? "Εστίαση" : "Restaurants", heading: isEl ? "Το μενού σας στο κινητό." : "Your menu in their hands.", description: isEl ? "Ψηφιακή παρουσία και online μενού για εστιατόρια, καφέ και μπαρ." : "A digital presence and online menus for restaurants, cafés and bars.", tags: isEl ? ["ΜΕΝΟΥ", "ΚΙΝΗΤΟ", "ΕΠΙΚΟΙΝΩΝΙΑ"] : ["MENUS", "MOBILE", "CONTACT"], href: `/${lang}/services/digital-transformation`, kind:"restaurant" },
   ];
   return <section id="services" ref={section} className="conveyor-section" aria-labelledby="conveyor-title"><div className="conveyor-stage" ref={stage}>
-    <div className="factory-scenery" aria-hidden="true"><div className="factory-windows"/><div className="factory-pipe"/><div className="factory-machine"><div className="factory-machine-head"><i/><i/><i/></div><div className="factory-machine-shaft"/><div className="factory-machine-press"/></div><div className="factory-gear factory-gear-one">✳</div><div className="factory-gear factory-gear-two">✳</div></div>
+    <div className="factory-scenery" aria-hidden="true"><div className="factory-windows"/><div className="factory-pipe"/><div className="factory-control factory-control-left"><span>01 / DIGITAL STUDIO</span><b>✳</b><i/><i/><i/></div><div className="factory-control factory-control-right"><span>02 / CORFU DIGITAL</span><b>↗</b><i/><i/><i/></div><div className="factory-machine"><div className="factory-machine-head"><i/><i/><i/></div><div className="factory-machine-shaft"/><div className="factory-machine-press"/></div><div className="factory-gear factory-gear-one">✳</div><div className="factory-gear factory-gear-two">✳</div></div>
     <div className="conveyor-heading"><span>04 / {isEl ? "Ο ΚΟΣΜΟΣ ΤΩΝ ΔΥΝΑΤΟΤΗΤΩΝ" : "A WORLD OF POSSIBILITIES"}</span><h2 id="conveyor-title">{isEl ? <>ΠΙΣΩ ΑΠΟ ΤΗΝ ΕΙΚΟΝΑ, <em>Η ΤΕΧΝΟΛΟΓΙΑ ΣΑΣ.</em></> : <>BEHIND THE EXPERIENCE, <em>YOUR DIGITAL ENGINE.</em></>}</h2><p className="conveyor-hint"><span className="conveyor-desktop-hint">{isEl ? "ΣΥΝΕΧΙΣΤΕ ΤΟ SCROLL ΓΙΑ ΝΑ ΑΝΑΚΑΛΥΨΕΤΕ" : "KEEP SCROLLING TO EXPLORE"}</span><span className="conveyor-touch-hint">{isEl ? "ΣΥΡΕΤΕ ΓΙΑ ΝΑ ΑΝΑΚΑΛΥΨΕΤΕ" : "SWIPE TO EXPLORE"}</span> <span aria-hidden="true">→</span></p></div>
     <div className="conveyor-viewport" ref={viewport} tabIndex={0} aria-label={isEl ? "Εξερευνήστε λύσεις για επιχειρήσεις" : "Explore business solutions"}><div className="conveyor-track" ref={track}>
       <div className="factory-lead" aria-hidden="true" />
