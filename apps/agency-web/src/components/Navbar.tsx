@@ -71,6 +71,12 @@ export function Navbar({ showBackToHome = false }: NavbarProps) {
       desc: isEl ? "AI Concierge & Business Automation" : "AI integrations & automation",
     },
     {
+      href: `/${lang}/case-studies`,
+      label: isEl ? "Έργα" : "Portfolio",
+      icon: <Briefcase className="w-4 h-4 text-blue-600" />,
+      desc: isEl ? "Δείτε επιλεγμένα έργα μας" : "Explore our selected work",
+    },
+    {
       href: `/${lang}/blog`,
       label: "Blog",
       icon: <MessageSquare className="w-4 h-4 text-blue-600" />,
