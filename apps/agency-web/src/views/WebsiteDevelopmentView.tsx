@@ -8,10 +8,10 @@ import { Navbar } from "../components/Navbar";
 import { WebsiteFaq } from "../components/WebsiteFaq";
 
 const projects = [
-  { name: "Marcopolo Hotel", url: "https://marcopolocorfu.com", type: { el: "Ξενοδοχείο", en: "Hotel" } },
-  { name: "AEOLINA Luxury Villas", url: "https://aeolinavillas.com", type: { el: "Βίλες", en: "Villas" } },
-  { name: "ion-boats", url: "https://ion-boats.com", type: { el: "Ενοικιάσεις σκαφών", en: "Boat rentals" } },
-  { name: "Corfu Transfers", url: "https://corfutransfersapp.com", type: { el: "Μεταφορές", en: "Transfers" } },
+  { name: "Marcopolo Hotel", url: "https://marcopolocorfu.com", type: { el: "Ξενοδοχείο", en: "Hotel" }, description: { el: "Ιστοσελίδα ξενοδοχείου στην Παλιά Πόλη, με παρουσίαση δωματίων και δυνατότητα απευθείας κράτησης.", en: "A Corfu Town hotel website presenting rooms and supporting direct reservations." } },
+  { name: "AEOLINA Luxury Villas", url: "https://aeolinavillas.com", type: { el: "Βίλες", en: "Villas" }, description: { el: "Παρουσίαση πολυτελών βιλών και πλατφόρμα απευθείας κρατήσεων με συγχρονισμό διαθεσιμότητας.", en: "A luxury villa website and direct booking platform with calendar availability synchronization." } },
+  { name: "ion-boats", url: "https://ion-boats.com", type: { el: "Ενοικιάσεις σκαφών", en: "Boat rentals" }, description: { el: "Παρουσίαση ιδιωτικών εκδρομών, επιλογή πακέτων και online κρατήσεις για σκάφη στην Κέρκυρα.", en: "Private boat trips presented with package selection and online booking for visitors to Corfu." } },
+  { name: "Corfu Transfers", url: "https://corfutransfersapp.com", type: { el: "Μεταφορές", en: "Transfers" }, description: { el: "Σύστημα κρατήσεων μεταφορών με προγραμματισμό παραλαβών και τιμολόγηση διαδρομών.", en: "A transfer booking system with pickup scheduling and route pricing." } },
 ];
 
 export function WebsiteDevelopmentView() {
@@ -80,7 +80,7 @@ export function WebsiteDevelopmentView() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {projects.map((project) => <a key={project.name} href={project.url} target="_blank" rel="noreferrer" className="rounded-xl border border-slate-700 bg-slate-800 p-5 hover:border-blue-400 transition">
-              <span className="text-sm text-blue-300">{project.type[lang]}</span><h3 className="mt-2 text-lg font-bold">{project.name}</h3><span className="mt-4 inline-flex items-center gap-2 text-sm text-slate-300">{isEl ? "Επίσκεψη ιστοσελίδας" : "Visit website"}<ArrowRight className="w-4 h-4" /></span>
+              <span className="text-sm text-blue-300">{project.type[lang]}</span><h3 className="mt-2 text-lg font-bold">{project.name}</h3><p className="mt-3 text-sm leading-relaxed text-slate-300">{project.description[lang]}</p><span className="mt-4 inline-flex items-center gap-2 text-sm text-slate-300">{isEl ? "Επίσκεψη ιστοσελίδας" : "Visit website"}<ArrowRight className="w-4 h-4" /></span>
             </a>)}
           </div>
         </div>
