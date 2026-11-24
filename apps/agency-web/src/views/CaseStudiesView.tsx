@@ -37,16 +37,16 @@ export function CaseStudiesView() {
       imageAlt: "ion-boats Corfu Boat Trips Live Photo",
     },
     {
-      title: "AEOLINA Luxury Villas",
-      category: isEl ? "Μηχανή Απευθείας Κρατήσεων Βίλας" : "Villa Direct Engine",
-      location: isEl ? "Επισκοπιανά, Κέρκυρα" : "Episkopiana, Corfu",
+      title: "SeaMemories360",
+      category: isEl ? "Θαλάσσιες Εμπειρίες & Υποβρύχιο Βίντεο" : "Sea Experiences & Underwater Video",
+      location: isEl ? "Κέρκυρα, Ελλάδα" : "Corfu, Greece",
       description: isEl
-        ? "Πλατφόρμα απευθείας κρατήσεων για πολυτελείς βίλες. Αμφίδρομος συγχρονισμός διαθεσιμότητας ημερολογίων (iCal) με Airbnb και Booking.com, εξαλείφοντας τις προμήθειες τρίτων."
-        : "Custom direct booking platform built for luxury private villas. Synchronizes calendar availability 2-way with Airbnb and Booking.com while eliminating OTA commissions.",
-      metrics: isEl ? "0% Προμήθεια Πλατφορμών" : "0% OTA Commission",
-      link: "https://aeolinavillas.com",
-      imageUrl: "https://aeolinavillas.com/images/slider/1.webp",
-      imageAlt: "AEOLINA Luxury Villas Corfu Real Photo",
+        ? "Ιστοσελίδα για μοναδικές θαλάσσιες εμπειρίες στην Κέρκυρα, με υποβρύχια βίντεο, στιγμές snorkeling και ενοικίαση sea scooter."
+        : "A website for unique sea experiences in Corfu, featuring underwater videos, snorkeling memories, and sea scooter rental.",
+      metrics: isEl ? "Υποβρύχιο Βίντεο & Sea Scooter" : "Underwater Video & Sea Scooter",
+      link: "https://www.seamemories360.com",
+      imageUrl: "https://www.seamemories360.com/images/aqua-marina-bluedrive-rental.png",
+      imageAlt: "SeaMemories360 underwater experiences in Corfu",
     },
     {
       title: "Corfu Transfers Platform",
